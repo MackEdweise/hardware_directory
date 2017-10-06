@@ -32,3 +32,6 @@ footer{
 .text-white{
     color: white;
 }
+.center-space{
+    margin-top: 30vh;
+}

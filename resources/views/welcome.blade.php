@@ -51,7 +51,7 @@
     </nav>
     <div class="row">
         <img src="{{ URL::asset('img/blackchips.jpg') }}" class="top-img">
-        <div class="header-label"><h1>hardware</h1><h1 style="color: red !important;">.</h1><h1>dir</h1></div>
+        <div class="header-label"><h1>hardware</h1><h1 style="color: #A94442 !important;">.</h1><h1>dir</h1></div>
     </div>
     <div class="row">
         <div class="container space">
