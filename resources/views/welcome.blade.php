@@ -49,7 +49,7 @@
         <!-- /.container-fluid -->
     </nav>
     <div class="row">
-        <img src="img/blackchips.png" class="img-responsive top-img">
+        <img src="{{ URL::asset('img/blackchips.jpg') }}" class="img-responsive top-img">
     </div>
     <div class="row">
         <div class="container explanation">
@@ -60,21 +60,21 @@
             </div>
             <div class="row text-center">
                 <div class="col-md-34 col-sm-12 inside">
-                    <img class="img-responsive icon" src="img/integrated-circuit.png" alt="">
+                    <img class="img-responsive icon" src="{{ URL::asset('img/integrated-circuit.png') }}" alt="">
                     <br>
                     <p class="text-muted">
                         Search for parts.
                     </p>
                 </div>
                 <div class="col-md-3 col-sm-12 inside">
-                    <img class="img-responsive icon" src="img/folder.png" alt="">
+                    <img class="img-responsive icon" src="{{ URL::asset('img/folder.png') }}" alt="">
                     <br>
                     <p class="text-muted">
                         Access datasheets.
                     </p>
                 </div>
                 <div class="col-md-3 col-sm-12 inside">
-                    <img class="img-responsive icon" src="img/play-button.png" alt="">
+                    <img class="img-responsive icon" src="{{ URL::asset('img/play-button.png') }}" alt="">
                     <br>
                     <p class="text-muted">
                         Learn to use components.
@@ -93,7 +93,7 @@
             </p>
         </div>
         <div class="col-md-6 col-sm-12 inside">
-            <img class="img-responsive" src="img/prototyping.png" alt="">
+            <img class="img-responsive" src="{{ URL::asset('img/prototyping.jpg') }}" alt="">
         </div>
     </div>
     <footer>
