@@ -9,13 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Leadme</title>
+    <title>hardware.dir</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
 
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('img/hddirlogo.png') }}">
@@ -30,7 +31,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">hardware<p class="text-danger">.</p>dir</a>
+                <a class="navbar-brand page-scroll" href="#page-top">hardware<h3 style="display: inline;" class="text-danger">.</h3 style="display: inline;">dir</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -49,31 +50,27 @@
         <!-- /.container-fluid -->
     </nav>
     <div class="row">
-        <img src="{{ URL::asset('img/blackchips.jpg') }}" class="img-responsive top-img">
+        <img src="{{ URL::asset('img/blackchips.jpg') }}" class="top-img">
+        <div class="header-label"><h1>hardware</h1><h1 style="color: red !important;">.</h1><h1>dir</h1></div>
     </div>
     <div class="row">
-        <div class="container explanation">
-            <div class="row">
-                <p class="text-muted">
-                    Find everything you need to build your prototype.
-                </p>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4 col-sm-12 inside">
+        <div class="container space">
+            <div class="row text-center space">
+                <div class="col-md-4 col-sm-12 space">
                     <img class="img-responsive icon" src="{{ URL::asset('img/integrated-circuit.png') }}" alt="">
                     <br>
                     <p class="text-muted">
                         Search for parts.
                     </p>
                 </div>
-                <div class="col-md-4 col-sm-12 inside">
+                <div class="col-md-4 col-sm-12 space">
                     <img class="img-responsive icon" src="{{ URL::asset('img/folder.png') }}" alt="">
                     <br>
                     <p class="text-muted">
                         Access datasheets.
                     </p>
                 </div>
-                <div class="col-md-4 col-sm-12 inside">
+                <div class="col-md-4 col-sm-12 space">
                     <img class="img-responsive icon" src="{{ URL::asset('img/play-button.png') }}" alt="">
                     <br>
                     <p class="text-muted">
@@ -83,22 +80,43 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6 col-sm-12">
-            <p>
+    <div class="row space">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <p class="inside">
                 When you are creating anything new, research is at the core of this creative process.
                 With prototyping electronics that means picking out the parts you want to use in your prototype based on
-                their interfacing compatibility, clock speed, form factor, and other parameters. hardware<p class="text-danger">.</p>dir
-                make it wasy to find and understanding the parts that you need.
+                their interfacing compatibility, clock speed, form factor, and other parameters. hardware.dir
+                makes it easy to find and understand the parts that you need.
             </p>
         </div>
-        <div class="col-md-6 col-sm-12 inside">
-            <img class="img-responsive" src="{{ URL::asset('img/prototyping.jpg') }}" alt="">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="inside">
+                <img class="img-responsive" src="{{ URL::asset('img/prototyping.jpg') }}" alt="">
+            </div>
         </div>
     </div>
-    <footer>
-        <div class="container">
-            <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-        </div>
-    </footer>
 </body>
+<footer>
+    <div class="container text-center text-secondary">
+        <div class="text-white inside-small">Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var topOffset = $(window).width()/2.5;
+            var leftOffset = - $(window).width()/3 + $(window).width();
+            $('.header-label').offset({top: topOffset, left: leftOffset});
+            $(window).resize(function(){
+                var topOffset = $(window).width()/2.5;
+                var leftOffset = - $(window).width()/3 + $(window).width();
+                $('.header-label').offset({top: topOffset, left: leftOffset});
+            });
+        });
+    </script>
+</footer>
