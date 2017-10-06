@@ -53,27 +53,27 @@
     </div>
     <div class="row">
         <div class="container explanation">
-            <div class="col-md-12">
+            <div class="row">
                 <p class="text-muted">
                     Find everything you need to build your prototype.
                 </p>
             </div>
             <div class="row text-center">
-                <div class="col-md-34 col-sm-12 inside">
+                <div class="col-md-4 col-sm-12 inside">
                     <img class="img-responsive icon" src="{{ URL::asset('img/integrated-circuit.png') }}" alt="">
                     <br>
                     <p class="text-muted">
                         Search for parts.
                     </p>
                 </div>
-                <div class="col-md-3 col-sm-12 inside">
+                <div class="col-md-4 col-sm-12 inside">
                     <img class="img-responsive icon" src="{{ URL::asset('img/folder.png') }}" alt="">
                     <br>
                     <p class="text-muted">
                         Access datasheets.
                     </p>
                 </div>
-                <div class="col-md-3 col-sm-12 inside">
+                <div class="col-md-4 col-sm-12 inside">
                     <img class="img-responsive icon" src="{{ URL::asset('img/play-button.png') }}" alt="">
                     <br>
                     <p class="text-muted">
@@ -84,7 +84,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="row">
+        <div class="col-md-6 col-sm-12">
             <p>
                 When you are creating anything new, research is at the core of this creative process.
                 With prototyping electronics that means picking out the parts you want to use in your prototype based on
