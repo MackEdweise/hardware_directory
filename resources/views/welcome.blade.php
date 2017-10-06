@@ -112,7 +112,7 @@
             var width = $(window).width();
             var topOffset = width/2.5;
             if(width < 700){
-                var leftOffset = width - width/2;
+                var leftOffset = width - width/1.75;
             }
             else{
                 var leftOffset = width - width/3;
@@ -122,7 +122,7 @@
                 var width = $(window).width();
                 var topOffset = width/2.5;
                 if(width < 700){
-                    var leftOffset = width - width/2;
+                    var leftOffset = width - width/1.75;
                 }
                 else{
                     var leftOffset = width - width/3;
