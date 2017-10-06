@@ -109,12 +109,24 @@
 
     <script>
         $(document).ready(function(){
-            var topOffset = $(window).width()/2.5;
-            var leftOffset = - $(window).width()/3 + $(window).width();
+            var width = $(window).width();
+            var topOffset = width/2.5;
+            if(width < 700){
+                var leftOffset = width - width/2;
+            }
+            else{
+                var leftOffset = width - width/3;
+            }
             $('.header-label').offset({top: topOffset, left: leftOffset});
             $(window).resize(function(){
-                var topOffset = $(window).width()/2.5;
-                var leftOffset = - $(window).width()/3 + $(window).width();
+                var width = $(window).width();
+                var topOffset = width/2.5;
+                if(width < 700){
+                    var leftOffset = width - width/2;
+                }
+                else{
+                    var leftOffset = width - width/3;
+                }
                 $('.header-label').offset({top: topOffset, left: leftOffset});
             });
         });
