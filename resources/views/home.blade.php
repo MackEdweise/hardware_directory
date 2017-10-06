@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Welcome! There are no components yet.
                 </div>
             </div>
         </div>
