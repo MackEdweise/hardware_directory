@@ -15,6 +15,9 @@ footer{
 .space{
     margin-top: 50px;
 }
+.navbar{
+    margin-bottom: 0;
+}
 .header-label {
     position: absolute;
     left: 70%;

@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Device;
 
 class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -18,11 +19,14 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        $currentUser = Auth::user();
+        $devices = Device::all();
+        return view('home')->with([
+            'currentUser' => $currentUser,
+            'devices' => $devices
+        ]);
     }
 }

@@ -21,6 +21,12 @@
 
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('img/hddirlogo.png') }}">
+
+    <!-- jQuery -->
+    <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 </head>
 <body>
     <div id="app">
@@ -65,7 +71,6 @@
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
-
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
@@ -77,11 +82,10 @@
                 </div>
             </div>
         </nav>
-
         @yield('content')
     </div>
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
+@yield('footer')
 </html>

@@ -1,0 +1,64 @@
+.node {
+    cursor: pointer;
+}
+
+.overlay{
+    background-color:#EEE;
+}
+
+.data-box{
+    width: 200px;
+}
+
+.box-container {
+    position: fixed !important;
+    right: 1% !important;
+    top: 7% !important;
+    left: auto !important;
+    bottom: auto !important;
+}
+
+.display-box{
+    width: 200px !important;
+}
+
+.display-option{
+    height: 30px !important;
+    line-height: 30px !important;
+    text-align: center !important;
+}
+
+.display-option-text{
+    line-height: 30px !important;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font-size:10px;
+    font-family:sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+
+.templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+}
+
+.ghostCircle.show{
+    display:block;
+}
+
+.ghostCircle, .activeDrag .ghostCircle{
+    display: none;
+}
