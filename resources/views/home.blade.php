@@ -9,6 +9,22 @@
 </div>
 <div class="container">
     <div class="row" id="deviceWindow">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="panel panel-default">
+                <div class="list-group">
+                    <a id="view-option" class="list-group-item active">
+                        View Parts
+                    </a>
+                    <a id="add-option" class="list-group-item list-group-item-action disabled">
+                        Add Parts
+                    </a>
+                    <a id="datasheet-option" class="list-group-item list-group-item-action">
+                        Datasheet Search
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="device-container">
         @foreach($devices as $device)
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="deviceWindow-item space center">
@@ -31,8 +47,9 @@
                 </div>
             </div>
         @endforeach
+        </div>
     </div>
-    <div class="row">
+    <div id="datasheet-container" class="row" style="display: none;">
         <div class="col-md-12 col-lg-10 col-lg-offset-1 hidden-sm hidden-xs">
             <div class="panel panel-default">
                 <div class="panel-heading">Datasheet Search</div>
@@ -157,6 +174,14 @@
     <script>
         $('document').ready(function() {
             $('#data-table').DataTable();
+            $('#datasheet-option').on('click', function(){
+                $('#device-container').hide();
+                $('#datasheet-container').show();
+            });
+            $('#view-option').on('click', function(){
+                $('#device-container').show();
+                $('#datasheet-container').hide();
+            });
         });
     </script>
 @endsection
