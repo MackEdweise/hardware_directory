@@ -12,6 +12,9 @@
 .device-image{
     width: 300px;
 }
+.clickable{
+    cursor: pointer;
+}
 .device-image-container{
     width: 300px;
     height: 160px;

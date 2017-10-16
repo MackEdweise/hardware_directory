@@ -7,26 +7,26 @@
 <div class="hidden-md hidden-lg top-img">
     <img class="top-img" src="{{ URL::asset('img/search-research-header-mobile.png') }}" >
 </div>
-<div class="container">
-    <div class="row" id="deviceWindow">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-            <div class="panel panel-default">
-                <div class="list-group">
-                    <a id="view-option" class="list-group-item active">
-                        View Parts
-                    </a>
-                    <a id="add-option" class="list-group-item list-group-item-action disabled">
-                        Add Parts
-                    </a>
-                    <a id="datasheet-option" class="list-group-item list-group-item-action">
-                        Datasheet Search
-                    </a>
-                </div>
+<div class="container space">
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="list-group">
+                <a id="view-option" class="list-group-item active clickable">
+                    View Parts
+                </a>
+                <a id="add-option" class="list-group-item list-group-item-action disabled clickable">
+                    Add Parts
+                </a>
+                <a id="datasheet-option" class="list-group-item list-group-item-action clickable">
+                    Datasheet Search
+                </a>
             </div>
         </div>
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" id="device-container">
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" id="device-container">
+        <div class="row" id="deviceWindow">
         @foreach($devices as $device)
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                 <div class="deviceWindow-item space center">
                     <a class="deviceWindow-link" data-toggle="modal" href="{{ '#deviceWindowModal'.$device->id }}">
                         <div class="deviceWindow-hover">
@@ -49,8 +49,8 @@
         @endforeach
         </div>
     </div>
-    <div id="datasheet-container" class="row" style="display: none;">
-        <div class="col-md-12 col-lg-10 col-lg-offset-1 hidden-sm hidden-xs">
+    <div style="display: none;" class="col-lg-10 hidden-sm hidden-md hidden-xs datasheet-container">
+        <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">Datasheet Search</div>
                 <div class="panel-body">
@@ -60,7 +60,7 @@
                         </div>
                     @endif
                     <div id="table-container">
-                        <table id="data-table" class="display" cellspacing="0" width="80%">
+                        <table class="display data-table" cellspacing="0" width="80%">
                             <thead>
                             <tr>
                                 <th>Name</th>
@@ -92,6 +92,86 @@
                                         @endif
                                     </tr>
                                 @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;" class="col-md-10 hidden-sm hidden-lg hidden-xs datasheet-container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">Datasheet Search</div>
+                <div class="panel-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <div id="table-container">
+                        <table class="display data-table" cellspacing="0" width="80%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Platform</th>
+                                <th>Connectivity</th>
+                                <th>Supply Voltage (High)</th>
+                                <th>Datasheet</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($devices as $device)
+                                <tr>
+                                    <td>{{ $device->name }}</td>
+                                    <td>{{ $device->category }}</td>
+                                    <td>{{ $device->platform }}</td>
+                                    <td>{{ $device->connectivity }}</td>
+                                    <td>{{ $device->high_voltage }}</td>
+                                    @if(!is_null($device->datasheet))
+                                        <td><a href="{{ $device->datasheet }}">Get the Datasheet</a></td>
+                                    @else
+                                        <td>No Datasheet</td>
+                                    @endif
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;" class="col-sm-12 col-xs-12 hidden-md hidden-lg datasheet-container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">Datasheet Search</div>
+                <div class="panel-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <div id="table-container">
+                        <table class="display data-table" cellspacing="0" width="80%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Datasheet</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($devices as $device)
+                                <tr>
+                                    <td>{{ $device->name }}</td>
+                                    @if(!is_null($device->datasheet))
+                                        <td><a href="{{ $device->datasheet }}">Get the Datasheet</a></td>
+                                    @else
+                                        <td>No Datasheet</td>
+                                    @endif
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -173,14 +253,20 @@
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script>
         $('document').ready(function() {
-            $('#data-table').DataTable();
+            $('.data-table').DataTable();
             $('#datasheet-option').on('click', function(){
+                $('#view-option').removeClass('active');
+                $('#add-option').removeClass('active');
+                $(this).addClass('active');
                 $('#device-container').hide();
-                $('#datasheet-container').show();
+                $('.datasheet-container').show();
             });
             $('#view-option').on('click', function(){
+                $('#datasheet-option').removeClass('active');
+                $('#add-option').removeClass('active');
+                $(this).addClass('active');
                 $('#device-container').show();
-                $('#datasheet-container').hide();
+                $('.datasheet-container').hide();
             });
         });
     </script>
