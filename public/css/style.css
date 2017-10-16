@@ -76,7 +76,7 @@ footer{
     -moz-transition: all ease 0.5s;
     transition: all ease 0.5s;
     opacity: 0;
-    background: rgba(174, 76, 68, 0.9); }
+    background: rgba(165, 76, 86, 0.9); }
 #deviceWindow .deviceWindow-item .deviceWindow-link .deviceWindow-hover:hover {
     opacity: 1; }
 #deviceWindow .deviceWindow-item .deviceWindow-link .deviceWindow-hover .deviceWindow-hover-content {
