@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/add', 'DeviceController@add')->name('add_device');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('log_me_out');
