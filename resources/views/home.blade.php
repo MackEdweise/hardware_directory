@@ -32,7 +32,7 @@
                 <a id="view-option" class="list-group-item active clickable">
                     View Parts
                 </a>
-                <a id="add-option" class="list-group-item list-group-item-action {{ is_null(\Illuminate\Support\Facades\Auth::user()) ? 'disabled' : '' }} clickable" @if(!is_null(\Illuminate\Support\Facades\Auth::user())) data-toggle="modal" href="#deviceAddModal" @else href="#" data-toggle="popover" title="Popover Header" data-content="Sign up to contribute" @endif>
+                <a id="add-option" class="list-group-item list-group-item-action {{ is_null(\Illuminate\Support\Facades\Auth::user()) ? 'disabled' : '' }} clickable" @if(!is_null(\Illuminate\Support\Facades\Auth::user())) data-toggle="modal" href="#deviceAddModal" @else href="#" data-toggle="popover" title="Add Components" data-content="Sign up to contribute" @endif>
                     Add Parts
                 </a>
                 <a id="datasheet-option" class="list-group-item list-group-item-action clickable">
