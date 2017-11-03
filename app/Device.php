@@ -20,6 +20,6 @@ class Device extends Model
     protected $table = "devices";
 
     public function Tags(){
-        return $this->hasMany('App\Tag');
+        return $this->hasMany('App\Tag', 'device_id');
     }
 }

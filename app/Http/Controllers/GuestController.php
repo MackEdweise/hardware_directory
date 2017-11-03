@@ -8,6 +8,7 @@
 namespace App\Http\Controllers;
 
 use App\Device;
+use App\Tag;
 
 class GuestController extends Controller
 {
@@ -25,10 +26,21 @@ class GuestController extends Controller
     public function index()
     {
 
-        $devices = Device::all();
+        $devices = Device::with('Tags')->get();
+        $tags = Tag::all();
+
+        $uniqueTags = [];
+
+        foreach($tags as $tag){
+            if(!array_key_exists($tag->name,$uniqueTags)){
+                $uniqueTags[$tag->name] = $tag;
+            }
+        }
+
         return view('home')->with([
             'currentUser' => null,
-            'devices' => $devices
+            'devices' => $devices,
+            'tags' => collect($uniqueTags)
         ]);
     }
 }

@@ -11,6 +11,7 @@
 }
 .tag-panel{
     border-color: #cccccc;
+    max-width: 400px;
 }
 .device-image{
     width: 300px;
@@ -25,6 +26,9 @@ input{
     max-width: 400px;
 }
 textarea{
+    max-width: 400px;
+}
+select{
     max-width: 400px;
 }
 .device-image-container{

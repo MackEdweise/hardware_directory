@@ -42,9 +42,20 @@
         </div>
     </div>
     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" id="device-container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                <div class="btn-group" role="group">
+                    @if(!is_null($tags))
+                        @foreach($tags as $tag)
+                            <button id="{{ $tag->name }}-select" type="button" class="btn btn-secondary tag-select">{{ $tag->name }}</button>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        </div>
         <div class="row" id="deviceWindow">
         @foreach($devices as $device)
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="device col-lg-4 col-md-6 col-sm-12 col-xs-12 @foreach($device->Tags as $tag) {{ ' device-'.$tag->name.' ' }} @endforeach">
                 <div class="deviceWindow-item space center">
                     <a class="deviceWindow-link" data-toggle="modal" href="{{ '#deviceWindowModal'.$device->id }}">
                         <div class="deviceWindow-hover">
@@ -360,6 +371,17 @@
             else if(window.location.toString().indexOf('link=view') > -1){
                 $('#view-option').click();
             }
+
+            @if(!is_null($tags))
+                @foreach($tags as $tag)
+                    $('#{{ $tag->name }}-select').on('click', function(){
+                        $('.tag-select').removeClass('active');
+                        $(this).addClass('active');
+                        $('.device').hide();
+                        $('.device-{{ $tag->name }}').show();
+                    });
+                @endforeach
+            @endif
         });
     </script>
 @endsection
