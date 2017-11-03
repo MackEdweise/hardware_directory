@@ -211,6 +211,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto">
                         <div class="modal-body">
                             <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('add_device') }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="row">
                                     <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5">
                                         <input class="space-left" type="file" name="device-image" id="device-image" size="20" />
@@ -221,10 +222,10 @@
                                         <ul class="fa-ul text-left">
                                             <li> <i class="fa-li fa fa-feed"></i><input id="device-connectivity" connectivity="device-connectivity" type="text" class="form-control " value="{{ old('device-connectivity') ? old('device-connectivity') : '' }}" placeholder="Device connectivity"></li>
                                             <li> <i class="fa-li fa fa-battery-1"></i><input id="device-low" low="device-low" type="number" step="0.1" class="form-control " value="{{ old('device-low') ? old('device-low') : '' }}" placeholder="Device's low supply voltage"></li>
-                                            <li> <i class="fa-li fa fa-battery-4"></i><input id="device-high" high="device-high" type="number" class="form-control " value="{{ old('device-high') ? old('device-high') : '' }}" placeholder="Device's high supply voltage"></li>
+                                            <li> <i class="fa-li fa fa-battery-4"></i><input id="device-high" high="device-high" type="number" step="0.1" class="form-control " value="{{ old('device-high') ? old('device-high') : '' }}" placeholder="Device's high supply voltage"></li>
                                             <li> <i class="fa-li fa fa-hourglass-o"></i><input id="device-speed" speed="device-speed" type="text" class="form-control " value="{{ old('device-speed') ? old('device-speed') : '' }}" placeholder="Device speed"></li>
                                             <li> <i class="fa-li fa fa-industry"></i><input id="device-manufacturers" manufacturers="device-manufacturers" type="text" class="form-control " value="{{ old('device-manufacturers') ? old('device-manufacturers') : '' }}" placeholder="Device manufacturers"></li>
-                                            <li> <i class="fa-li fa fa-shopping-cart"></i><input id="device-available" available="device-available" type="number" step="0.1" class="form-control " value="{{ old('device-available') ? old('device-available') : '' }}" placeholder="Number available"></li>
+                                            <li> <i class="fa-li fa fa-shopping-cart"></i><input id="device-available" available="device-available" type="number" step="1" class="form-control " value="{{ old('device-available') ? old('device-available') : '' }}" placeholder="Number available"></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-5 col-sm-8 col-xs-8 col-sm-offset-2 col-md-offset-0 col-lg-offset-0 col-xs-offset-2 col-lg-5 text-center space">
