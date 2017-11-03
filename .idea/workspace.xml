@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8017affd-10d5-47e0-abb1-cbf96e606efb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravelcollective/remote/config/remote.php" afterPath="$PROJECT_DIR$/vendor/laravelcollective/remote/config/remote.php" />
     </list>
     <ignored path="hardware_directory.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,16 +45,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+            <state relative-caret-position="225">
+              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
                 <element signature="e#132#160#0#PHP" expanded="true" />
               </folding>
@@ -76,15 +67,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="351" column="80" selection-start-line="351" selection-start-column="80" selection-end-line="351" selection-end-column="80" />
+            <state relative-caret-position="-10">
+              <caret line="326" column="41" selection-start-line="326" selection-start-column="41" selection-end-line="326" selection-end-column="41" />
               <folding>
                 <marker date="1509719453000" expanded="true" signature="20530:21891" ph="..." />
                 <marker date="1509719453000" expanded="true" signature="20543:21890" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="remote.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/laravelcollective/remote/config/remote.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="24" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,13 +107,6 @@
               <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hddirlogo.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/img/hddirlogo.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -146,7 +150,6 @@
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/app/Device.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
@@ -159,6 +162,8 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/vendor/laravelcollective/remote/config/remote.php" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -285,7 +290,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="SearchEverywhereHistoryKey" value="welcome&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/welcome.blade.php&#10;home&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/app/Http/Controllers/HomeController.php&#10;web.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/routes/web.php&#10;homne&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/layouts/app.blade.php&#10;style&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/public/css/style.css&#10;homecontroller&#9;null&#9;null&#10;app.blade&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/layouts/app.blade.php&#10;home.blade.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/home.blade.php&#10;app.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/app.php&#10;database.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/database.php" />
+    <property name="SearchEverywhereHistoryKey" value="remote.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/vendor/laravelcollective/remote/config/remote.php&#10;welcome&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/welcome.blade.php&#10;home&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/app/Http/Controllers/HomeController.php&#10;web.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/routes/web.php&#10;homne&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/layouts/app.blade.php&#10;style&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/public/css/style.css&#10;homecontroller&#9;null&#9;null&#10;app.blade&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/layouts/app.blade.php&#10;home.blade.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/home.blade.php&#10;app.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/app.php&#10;database.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/database.php" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
@@ -365,12 +370,12 @@
       <workItem from="1508206615635" duration="599000" />
       <workItem from="1508974581380" duration="2497000" />
       <workItem from="1509671750577" duration="6114000" />
-      <workItem from="1509716148486" duration="3141000" />
+      <workItem from="1509716148486" duration="3461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45857000" />
+    <option name="totallyTimeSpent" value="46177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="23" width="1356" height="712" extended-state="0" />
@@ -430,14 +435,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -651,13 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -742,16 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
-          <folding>
-            <element signature="e#132#160#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -802,11 +782,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="351" column="80" selection-start-line="351" selection-start-column="80" selection-end-line="351" selection-end-column="80" />
+        <state relative-caret-position="-10">
+          <caret line="326" column="41" selection-start-line="326" selection-start-column="41" selection-end-line="326" selection-end-column="41" />
           <folding>
             <marker date="1509719453000" expanded="true" signature="20530:21891" ph="..." />
             <marker date="1509719453000" expanded="true" signature="20543:21890" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravelcollective/remote/config/remote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="e#132#160#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

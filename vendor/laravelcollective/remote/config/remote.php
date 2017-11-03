@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => 'production',
+    'default' => 'Blue',
 
     /*
     |--------------------------------------------------------------------------
@@ -27,10 +27,10 @@ return [
     */
 
     'connections' => [
-        'production' => [
-            'host'      => '',
-            'username'  => '',
-            'password'  => '',
+        'Blue' => [
+            'host'      => env('BLUE_HOST'),
+            'username'  => env('BLUE_USR'),
+            'password'  => env('BLUE_PSWD'),
             'key'       => '',
             'keytext'   => '',
             'keyphrase' => '',
@@ -51,7 +51,7 @@ return [
     */
 
     'groups' => [
-        'web' => ['production'],
+        'web' => ['Blue'],
     ],
 
 ];
