@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8017affd-10d5-47e0-abb1-cbf96e606efb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
     </list>
     <ignored path="hardware_directory.iws" />
@@ -65,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+            <state relative-caret-position="480">
+              <caret line="78" column="53" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
               <folding>
                 <element signature="e#132#160#0#PHP" expanded="true" />
               </folding>
@@ -87,14 +85,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2775">
-              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+            <state relative-caret-position="390">
+              <caret line="226" column="172" selection-start-line="226" selection-start-column="172" selection-end-line="226" selection-end-column="172" />
               <folding>
-                <marker date="1509674493000" expanded="true" signature="19958:20912" ph="..." />
-                <marker date="1509674493000" expanded="true" signature="19970:20911" ph="..." />
+                <marker date="1509675497000" expanded="true" signature="19980:20934" ph="..." />
+                <marker date="1509675497000" expanded="true" signature="19992:20933" ph="..." />
               </folding>
             </state>
           </provider>
@@ -160,8 +158,8 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
       </list>
     </option>
   </component>
@@ -303,12 +301,12 @@
       <workItem from="1508186903292" duration="3937000" />
       <workItem from="1508206615635" duration="599000" />
       <workItem from="1508974581380" duration="2497000" />
-      <workItem from="1509671750577" duration="3378000" />
+      <workItem from="1509671750577" duration="3691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39980000" />
+    <option name="totallyTimeSpent" value="40293000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="43" width="1356" height="712" extended-state="0" />
@@ -467,8 +465,8 @@
         <state relative-caret-position="165">
           <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
           <folding>
-            <marker date="1509674493000" expanded="true" signature="19958:20912" ph="..." />
-            <marker date="1509674493000" expanded="true" signature="19970:20911" ph="..." />
+            <marker date="1509675497000" expanded="true" signature="19980:20934" ph="..." />
+            <marker date="1509675497000" expanded="true" signature="19992:20933" ph="..." />
           </folding>
         </state>
       </provider>
@@ -735,23 +733,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2775">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        <state relative-caret-position="480">
+          <caret line="78" column="53" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
           <folding>
-            <marker date="1509674493000" expanded="true" signature="19958:20912" ph="..." />
-            <marker date="1509674493000" expanded="true" signature="19970:20911" ph="..." />
+            <element signature="e#132#160#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+        <state relative-caret-position="390">
+          <caret line="226" column="172" selection-start-line="226" selection-start-column="172" selection-end-line="226" selection-end-column="172" />
           <folding>
-            <element signature="e#132#160#0#PHP" expanded="true" />
+            <marker date="1509675497000" expanded="true" signature="19980:20934" ph="..." />
+            <marker date="1509675497000" expanded="true" signature="19992:20933" ph="..." />
           </folding>
         </state>
       </provider>
