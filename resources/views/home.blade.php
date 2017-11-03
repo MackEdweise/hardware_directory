@@ -372,6 +372,8 @@
                 $('#view-option').click();
             }
 
+            $('[data-toggle="popover"]').popover();
+
             @if(!is_null($tags))
                 @foreach($tags as $tag)
                     $('#{{ $tag->name }}-select').on('click', function(){
