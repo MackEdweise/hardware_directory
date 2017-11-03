@@ -322,8 +322,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script>
-        $('document').ready(function() {
+        $(document).ready(function() {
+
             $('.data-table').DataTable();
+
             $('#datasheet-option').on('click', function(){
                 $('#view-option').removeClass('active');
                 $('#add-option').removeClass('active');
@@ -343,6 +345,16 @@
                 $('#datasheet-option').removeClass('active');
                 $(this).addClass('active');
             });
+
+            if (window.location.toString().indexOf('link=parts') > -1){
+                $('#view-option').click();
+            }
+            else if(window.location.toString().indexOf('link=datasheets') > -1){
+                $('#datasheet-option').click();
+            }
+            else if(window.location.toString().indexOf('link=view') > -1){
+                $('#view-option').click();
+            }
         });
     </script>
 @endsection

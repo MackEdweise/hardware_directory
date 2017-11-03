@@ -59,23 +59,23 @@
                 <div class="col-md-4 col-sm-12 space">
                     <img class="img-responsive icon" src="{{ URL::asset('img/integrated-circuit.png') }}" alt="">
                     <br>
-                    <p class="text-muted">
-                        Search for parts.
-                    </p>
+                    <a href="{{ route('home').'?link=parts' }}">
+                        Search for parts
+                    </a>
                 </div>
                 <div class="col-md-4 col-sm-12 space">
                     <img class="img-responsive icon" src="{{ URL::asset('img/folder.png') }}" alt="">
                     <br>
-                    <p class="text-muted">
-                        Access datasheets.
-                    </p>
+                    <a href="{{ route('home').'?link=datasheets' }}">
+                        Access datasheets
+                    </a>
                 </div>
                 <div class="col-md-4 col-sm-12 space">
                     <img class="img-responsive icon" src="{{ URL::asset('img/play-button.png') }}" alt="">
                     <br>
-                    <p class="text-muted">
-                        Learn to use components.
-                    </p>
+                    <a href="{{ route('home').'?link=view' }}">
+                        Learn to use components
+                    </a>
                 </div>
             </div>
         </div>
