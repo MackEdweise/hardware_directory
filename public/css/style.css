@@ -9,11 +9,17 @@
     margin-left: auto !important;
     margin-right: auto !important;
 }
+.tag-panel{
+    border-color: #cccccc;
+}
 .device-image{
     width: 300px;
 }
 .clickable{
     cursor: pointer;
+}
+.tag{
+    background-color: #777777;
 }
 input{
     max-width: 400px;

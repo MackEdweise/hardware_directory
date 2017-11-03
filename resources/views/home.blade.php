@@ -238,6 +238,11 @@
                                     <input id="device-category" name="device-category" type="text" class="form-control " value="{{ old('device-category') ? old('device-category') : '' }}" placeholder="Device category">
                                     <input id="device-datasheet" name="device-datasheet" type="text" class="form-control " value="{{ old('device-datasheet') ? old('device-datasheet') : '' }}" placeholder="Datasheet link">
                                     <textarea id="device-description" name="device-description" type="text" class="form-control" value="{{ old('device-description') ? old('device-description') : '' }}" placeholder="{{ is_null(old('device-description')) ? 'Device description'  : ''}}"></textarea>
+                                    <div class="panel tag-panel">
+                                        <div class="panel-body">
+                                            <select data-role="tagsinput" value="" type="text" id="tags" name="tags[]" placeholder="Add tags" multiple></select>
+                                        </div>
+                                    </div>
                                     <button type="submit" class="btn btn-success add-submit space">Save</button>
                                 </div>
                             </div>
@@ -319,10 +324,12 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/data.css') }}"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
     <script>
         $(document).ready(function() {
 
             $('.data-table').DataTable();
+            $('#tags').tagsinput();
 
             $('#datasheet-option').on('click', function(){
                 $('#view-option').removeClass('active');

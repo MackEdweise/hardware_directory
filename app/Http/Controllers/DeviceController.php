@@ -89,6 +89,18 @@ class DeviceController
             Storage::disk('public')->delete($imageName);
         }
 
+        if(!is_null($request->input('tags'))) {
+
+            foreach ($request->input('tags') as $tag) {
+                $new = new Tag();
+                $new->device_id = $device->id;
+                $new->name = $tag;
+                $new->created_at = date('Y-m-d H:i:s');
+                $new->updated_at = date('Y-m-d H:i:s');
+                $new->save();
+            }
+        }
+
         $device->save();
 
         $currentUser = Auth::user();
