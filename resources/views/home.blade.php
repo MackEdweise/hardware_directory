@@ -7,6 +7,24 @@
 <div class="hidden-md hidden-lg top-img">
     <img class="top-img" src="{{ URL::asset('img/search-research-header-mobile.png') }}" >
 </div>
+<div class="container">
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <div class="flash-message">
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @if(session('alert-' . $msg))
+                <p class="alert alert-{{ $msg }}">{{ session('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+            @endif
+        @endforeach
+    </div>
+</div>
 <div class="container space">
     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
         <div class="panel panel-default">
@@ -213,6 +231,7 @@
                                         <input id="device-name" name="device-name" type="text" class="form-control " value="{{ old('device-name') ? old('device-name') : '' }}" placeholder="Device name">
                                         <input id="device-platform" platform="device-platform" type="text" class="form-control " value="{{ old('device-platform') ? old('device-platform') : '' }}" placeholder="Device platform">
                                         <input id="device-category" category="device-category" type="text" class="form-control " value="{{ old('device-category') ? old('device-category') : '' }}" placeholder="Device category">
+                                        <input id="device-datasheet" category="device-datasheet" type="text" class="form-control " value="{{ old('device-datasheet') ? old('device-datasheet') : '' }}" placeholder="Datasheet link">
                                         <textarea id="device-description" name="device-description" type="text" class="form-control" value="{{ old('device-description') ? old('device-description') : '' }}" placeholder="{{ is_null(old('device-description')) ? 'Device description'  : ''}}"></textarea>
                                         <button type="submit" class="btn btn-success add-submit space">Save</button>
                                     </div>
