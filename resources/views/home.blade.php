@@ -7,7 +7,7 @@
 <div class="hidden-md hidden-lg top-img">
     <img class="top-img" src="{{ URL::asset('img/search-research-header-mobile.png') }}" >
 </div>
-<div class="container">
+<div class="container space">
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
@@ -51,7 +51,7 @@
                             <div class="deviceWindow-hover-content">
                                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
                                     <p>{{ $device->name }}</p>
-                                    <small>{{ $device->platform }} compatible {{ $device->category }}</small>
+                                    <small>{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</small>
                                 </div>
                             </div>
                         </div>
@@ -214,25 +214,30 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="row">
                                     <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5">
-                                        <input class="space-left" type="file" name="device-image" id="device-image" size="20" />
+                                        <div class="col-md-4 col-lg-6 col-sm-12 col-xs-12">
+                                            <p>Device Image</p>
+                                        </div>
+                                        <div class="col-md-8 col-lg-6 col-sm-12 col-xs-12">
+                                            <input class="space-left" type="file" name="device-image" id="device-image" size="20" />
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 col-sm-8 col-xs-8 col-sm-offset-2 col-md-offset-1 col-lg-offset-1 col-xs-offset-2 col-lg-5 text-center space">
                                         <ul class="fa-ul text-left">
-                                            <li> <i class="fa-li fa fa-feed"></i><input id="device-connectivity" connectivity="device-connectivity" type="text" class="form-control " value="{{ old('device-connectivity') ? old('device-connectivity') : '' }}" placeholder="Device connectivity"></li>
-                                            <li> <i class="fa-li fa fa-battery-1"></i><input id="device-low" low="device-low" type="number" step="0.1" class="form-control " value="{{ old('device-low') ? old('device-low') : '' }}" placeholder="Device's low supply voltage"></li>
-                                            <li> <i class="fa-li fa fa-battery-4"></i><input id="device-high" high="device-high" type="number" step="0.1" class="form-control " value="{{ old('device-high') ? old('device-high') : '' }}" placeholder="Device's high supply voltage"></li>
-                                            <li> <i class="fa-li fa fa-hourglass-o"></i><input id="device-speed" speed="device-speed" type="text" class="form-control " value="{{ old('device-speed') ? old('device-speed') : '' }}" placeholder="Device speed"></li>
-                                            <li> <i class="fa-li fa fa-industry"></i><input id="device-manufacturers" manufacturers="device-manufacturers" type="text" class="form-control " value="{{ old('device-manufacturers') ? old('device-manufacturers') : '' }}" placeholder="Device manufacturers"></li>
-                                            <li> <i class="fa-li fa fa-shopping-cart"></i><input id="device-available" available="device-available" type="number" step="1" class="form-control " value="{{ old('device-available') ? old('device-available') : '' }}" placeholder="Number available"></li>
+                                            <li> <i class="fa-li fa fa-feed"></i><input id="device-connectivity" name="device-connectivity" type="text" class="form-control " value="{{ old('device-connectivity') ? old('device-connectivity') : '' }}" placeholder="Device connectivity"></li>
+                                            <li> <i class="fa-li fa fa-battery-1"></i><input id="device-low" name="device-low" type="number" step="0.1" class="form-control " value="{{ old('device-low') ? old('device-low') : '' }}" placeholder="Device's low supply voltage"></li>
+                                            <li> <i class="fa-li fa fa-battery-4"></i><input id="device-high" name="device-high" type="number" step="0.1" class="form-control " value="{{ old('device-high') ? old('device-high') : '' }}" placeholder="Device's high supply voltage"></li>
+                                            <li> <i class="fa-li fa fa-hourglass-o"></i><input id="device-speed" name="device-speed" type="text" class="form-control " value="{{ old('device-speed') ? old('device-speed') : '' }}" placeholder="Device speed"></li>
+                                            <li> <i class="fa-li fa fa-industry"></i><input id="device-manufacturers" name="device-manufacturers" type="text" class="form-control " value="{{ old('device-manufacturers') ? old('device-manufacturers') : '' }}" placeholder="Device manufacturers"></li>
+                                            <li> <i class="fa-li fa fa-shopping-cart"></i><input id="device-available" name="device-available" type="number" step="1" class="form-control " value="{{ old('device-available') ? old('device-available') : '' }}" placeholder="Number available"></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-5 col-sm-8 col-xs-8 col-sm-offset-2 col-md-offset-0 col-lg-offset-0 col-xs-offset-2 col-lg-5 text-center space">
                                         <input id="device-name" name="device-name" type="text" class="form-control " value="{{ old('device-name') ? old('device-name') : '' }}" placeholder="Device name">
-                                        <input id="device-platform" platform="device-platform" type="text" class="form-control " value="{{ old('device-platform') ? old('device-platform') : '' }}" placeholder="Device platform">
-                                        <input id="device-category" category="device-category" type="text" class="form-control " value="{{ old('device-category') ? old('device-category') : '' }}" placeholder="Device category">
-                                        <input id="device-datasheet" category="device-datasheet" type="text" class="form-control " value="{{ old('device-datasheet') ? old('device-datasheet') : '' }}" placeholder="Datasheet link">
+                                        <input id="device-platform" name="device-platform" type="text" class="form-control " value="{{ old('device-platform') ? old('device-platform') : '' }}" placeholder="Device platform">
+                                        <input id="device-category" name="device-category" type="text" class="form-control " value="{{ old('device-category') ? old('device-category') : '' }}" placeholder="Device category">
+                                        <input id="device-datasheet" name="device-datasheet" type="text" class="form-control " value="{{ old('device-datasheet') ? old('device-datasheet') : '' }}" placeholder="Datasheet link">
                                         <textarea id="device-description" name="device-description" type="text" class="form-control" value="{{ old('device-description') ? old('device-description') : '' }}" placeholder="{{ is_null(old('device-description')) ? 'Device description'  : ''}}"></textarea>
                                         <button type="submit" class="btn btn-success add-submit space">Save</button>
                                     </div>
@@ -265,11 +270,11 @@
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-center hidden-lg hidden-md">
                                         <h2>{{ $device->name }}</h2>
-                                        <p class="item-intro text-muted">{{ $device->platform }} compatible {{ $device->category }}</p>
+                                        <p class="item-intro text-muted">{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</p>
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-xs hidden-sm">
                                         <h2>{{ $device->name }}</h2>
-                                        <p class="item-intro text-muted">{{ $device->platform }} compatible {{ $device->category }}</p>
+                                        <p class="item-intro text-muted">{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -278,7 +283,7 @@
                                             <li> <i class="fa-li fa fa-feed"></i>Connectivity: {{ $device->connectivity }}</li>
                                             <li> <i class="fa-li fa fa-battery-1"></i>Supply Voltage (Low): {{ $device->low_voltage }}</li>
                                             <li> <i class="fa-li fa fa-battery-4"></i>Supply Voltage (High): {{ $device->high_voltage }}</li>
-                                            <li> <i class="fa-li fa fa-hourglass-o"></i>Speed: {{ $device->speed != -1 ? $device->speed : 'N/A' }}</li>
+                                            <li> <i class="fa-li fa fa-hourglass-o"></i>Speed: {{ ($device->speed != null && $device->speed != '') ? $device->speed : 'N/A' }}</li>
                                             <li> <i class="fa-li fa fa-industry"></i>Manufacturers: {{ $device->manufacturers }}</li>
                                             <li> <i class="fa-li fa fa-shopping-cart"></i>Available: {{ $device->available }}</li>
                                         </ul>
@@ -288,7 +293,7 @@
                                             <li> <i class="fa-li fa fa-feed"></i>Connectivity: {{ $device->connectivity }}</li>
                                             <li> <i class="fa-li fa fa-battery-1"></i>Supply Voltage (Low): {{ $device->low_voltage }}</li>
                                             <li> <i class="fa-li fa fa-battery-4"></i>Supply Voltage (High): {{ $device->high_voltage }}</li>
-                                            <li> <i class="fa-li fa fa-hourglass-o"></i>Speed: {{ $device->speed != -1 ? $device->speed : 'N/A' }}</li>
+                                            <li> <i class="fa-li fa fa-hourglass-o"></i>Speed: {{ ($device->speed != null && $device->speed != '') ? $device->speed : 'N/A' }}</li>
                                             <li> <i class="fa-li fa fa-industry"></i>Manufacturers: {{ $device->manufacturers }}</li>
                                             <li> <i class="fa-li fa fa-shopping-cart"></i>Available: {{ $device->available }}</li>
                                         </ul>
