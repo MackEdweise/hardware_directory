@@ -322,6 +322,13 @@
                                         <p class="space-left-large">{{ $device->description }}</p>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12 col-md-12 col-sm-12">
+                                        @foreach($device->tags as $tag)
+                                            <span class="label label-default">{{ $tag->name }}</span>
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
