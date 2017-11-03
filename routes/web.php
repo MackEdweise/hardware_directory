@@ -11,13 +11,24 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){
+    $app = app();
+    if(!is_null(Auth::user())){
+        $controller = $app->make('\App\Http\Controllers\HomeController');
+    }
+    else{
+        $controller = $app->make('\App\Http\Controllers\GuestController');
+    }
+    return $controller->callAction('index', $parameters = array());
+})->name('home');
 
 Route::post('/add', 'DeviceController@add')->name('add_device');
 
