@@ -15,10 +15,20 @@
 .clickable{
     cursor: pointer;
 }
+input{
+    max-width: 400px;
+}
+textarea{
+    max-width: 400px;
+}
 .device-image-container{
     width: 300px;
     height: 160px;
     overflow: hidden;
+}
+.add-submit{
+    height: 30px;
+    width:80px;
 }
 .space-left{
     margin-left: 20% !important;

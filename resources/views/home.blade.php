@@ -195,23 +195,12 @@
                             <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('add_device') }}">
                                 <div class="row">
                                     <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5">
-                                        <h2>Upload Image</h2>
-                                        <input type="file" name="device-image" id="device-image" size="20" />
-                                    </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-center hidden-lg hidden-md">
-                                        <input id="device-name" name="device-name" type="text" class="form-control " value="{{ old('device-name') ? old('device-name') : '' }}" placeholder="Device name">
-                                        <input id="device-platform" platform="device-platform" type="text" class="form-control " value="{{ old('device-platform') ? old('device-platform') : '' }}" placeholder="Device platform">
-                                        <input id="device-category" category="device-category" type="text" class="form-control " value="{{ old('device-category') ? old('device-category') : '' }}" placeholder="Device category">
-                                    </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-xs hidden-sm">
-                                        <input id="device-2-name" name="device-2-name" type="text" class="form-control " value="{{ old('device-2-name') ? old('device-2-name') : '' }}" placeholder="Device name">
-                                        <input id="device-2-platform" platform="device-2-platform" type="text" class="form-control " value="{{ old('device-2-platform') ? old('device-2-platform') : '' }}" placeholder="Device platform">
-                                        <input id="device-2-category" category="device-2-category" type="text" class="form-control " value="{{ old('device-2-category') ? old('device-2-category') : '' }}" placeholder="Device category">
+                                        <input class="space-left" type="file" name="device-image" id="device-image" size="20" />
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 hidden-sm hidden-lg">
-                                        <ul class="fa-ul text-left space-left">
+                                    <div class="col-md-5 col-sm-8 col-xs-8 col-sm-offset-2 col-md-offset-1 col-lg-offset-1 col-xs-offset-2 col-lg-5 text-center space">
+                                        <ul class="fa-ul text-left">
                                             <li> <i class="fa-li fa fa-feed"></i><input id="device-connectivity" connectivity="device-connectivity" type="text" class="form-control " value="{{ old('device-connectivity') ? old('device-connectivity') : '' }}" placeholder="Device connectivity"></li>
                                             <li> <i class="fa-li fa fa-battery-1"></i><input id="device-low" low="device-low" type="number" class="form-control " value="{{ old('device-low') ? old('device-low') : '' }}" placeholder="Device's low supply voltage"></li>
                                             <li> <i class="fa-li fa fa-battery-4"></i><input id="device-high" high="device-high" type="number" class="form-control " value="{{ old('device-high') ? old('device-high') : '' }}" placeholder="Device's high supply voltage"></li>
@@ -220,28 +209,13 @@
                                             <li> <i class="fa-li fa fa-shopping-cart"></i><input id="device-available" available="device-available" type="number" class="form-control " value="{{ old('device-available') ? old('device-available') : '' }}" placeholder="Number available"></li>
                                         </ul>
                                     </div>
-                                    <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 hidden-xs hidden-md">
-                                        <ul class="fa-ul text-left space-left-large">
-                                            <li> <i class="fa-li fa fa-feed"></i><input id="device-2-connectivity" connectivity="device-2-connectivity" type="text" class="form-control " value="{{ old('device-2-connectivity') ? old('device-2-connectivity') : '' }}" placeholder="Device connectivity"></li>
-                                            <li> <i class="fa-li fa fa-battery-1"></i><input type="number" id="device-2-low" low="device-2-low" class="form-control " value="{{ old('device-2-low') ? old('device-2-low') : '' }}" placeholder="Device's low supply voltage"></li>
-                                            <li> <i class="fa-li fa fa-battery-4"></i><input id="device-2-high" high="device-2-high" type="number" class="form-control " value="{{ old('device-2-high') ? old('device-2-high') : '' }}" placeholder="Device's high supply voltage"></li>
-                                            <li> <i class="fa-li fa fa-hourglass-o"></i><input id="device-2-speed" speed="device-2-speed" type="text" class="form-control " value="{{ old('device-2-speed') ? old('device-2-speed') : '' }}" placeholder="Device speed"></li>
-                                            <li> <i class="fa-li fa fa-industry"></i><input id="device-2-manufacturers" manufacturers="device-2-manufacturers" type="text" class="form-control " value="{{ old('device-2-manufacturers') ? old('device-2-manufacturers') : '' }}" placeholder="Device manufacturers"></li>
-                                            <li> <i class="fa-li fa fa-shopping-cart"></i><input id="device-2-available" available="device-2-available" type="number" class="form-control " value="{{ old('device-2-available') ? old('device-2-available') : '' }}" placeholder="Number available"></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-sm hidden-xs">
+                                    <div class="col-md-5 col-sm-8 col-xs-8 col-sm-offset-2 col-md-offset-0 col-lg-offset-0 col-xs-offset-2 col-lg-5 text-center space">
+                                        <input id="device-name" name="device-name" type="text" class="form-control " value="{{ old('device-name') ? old('device-name') : '' }}" placeholder="Device name">
+                                        <input id="device-platform" platform="device-platform" type="text" class="form-control " value="{{ old('device-platform') ? old('device-platform') : '' }}" placeholder="Device platform">
+                                        <input id="device-category" category="device-category" type="text" class="form-control " value="{{ old('device-category') ? old('device-category') : '' }}" placeholder="Device category">
                                         <textarea id="device-description" name="device-description" type="text" class="form-control" value="{{ old('device-description') ? old('device-description') : '' }}" placeholder="{{ is_null(old('device-description')) ? 'Device description'  : ''}}"></textarea>
+                                        <button type="submit" class="btn btn-success add-submit space">Save</button>
                                     </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-sm hidden-md hidden-lg">
-                                        <textarea id="device-2-description" name="device-2-description" type="text" class="form-control" value="{{ old('device-2-description') ? old('device-2-description') : '' }}" placeholder="{{ is_null(old('device-2-description')) ? 'Device description'  : ''}}"></textarea>
-                                    </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-md hidden-lg hidden-xs">
-                                        <textarea id="device-3-description" name="device-3-description" type="text" class="form-control" value="{{ old('device-3-description') ? old('device-3-description') : '' }}" placeholder="{{ is_null(old('device-3-description')) ? 'Device description'  : ''}}"></textarea>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <button type="submit" style="height: 30px; width:80px;" class="btn btn-success">Save</button>
                                 </div>
                             </form>
                         </div>
@@ -338,6 +312,11 @@
                 $(this).addClass('active');
                 $('#device-container').show();
                 $('.datasheet-container').hide();
+            });
+            $('#add-option').on('click', function(){
+                $('#view-option').removeClass('active');
+                $('#datasheet-option').removeClass('active');
+                $(this).addClass('active');
             });
         });
     </script>
