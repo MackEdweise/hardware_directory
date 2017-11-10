@@ -32,7 +32,7 @@
                 <a id="view-option" class="list-group-item active clickable">
                     View Parts
                 </a>
-                <a id="add-option" class="list-group-item list-group-item-action {{ is_null(\Illuminate\Support\Facades\Auth::user()) ? 'disabled' : '' }} clickable" @if(!is_null(\Illuminate\Support\Facades\Auth::user())) data-toggle="modal" href="#deviceAddModal" @else href="#" data-toggle="popover" title="Add Components" data-content="Sign up to contribute" @endif>
+                <a id="add-option" class="list-group-item list-group-item-action {{ is_null(\Illuminate\Support\Facades\Auth::user()) ? 'disabled' : '' }} clickable" @if(!is_null(\Illuminate\Support\Facades\Auth::user())) data-toggle="modal" href="#deviceAddModal" @else href="#" data-toggle="tooltip" title="Sign up to contribute" @endif>
                     Add Parts
                 </a>
                 <a id="datasheet-option" class="list-group-item list-group-item-action clickable">
@@ -112,7 +112,7 @@
                                         <td>{{ $device->connectivity }}</td>
                                         <td>{{ $device->low_voltage }}</td>
                                         <td>{{ $device->high_voltage }}</td>
-                                        <td>{{ $device->speed != -1 ? $device->speed : 'N/A' }}</td>
+                                        <td>{{ ($device->speed != null && $device->speed != '') ? $device->speed : 'N/A' }}</td>
                                         <td>{{ $device->manufacturers }}</td>
                                         @if(!is_null($device->datasheet))
                                             <td><a href="{{ $device->datasheet }}">Get the Datasheet</a></td>
@@ -249,7 +249,7 @@
                                     <input id="device-category" name="device-category" type="text" class="form-control " value="{{ old('device-category') ? old('device-category') : '' }}" placeholder="Device category">
                                     <input id="device-datasheet" name="device-datasheet" type="text" class="form-control " value="{{ old('device-datasheet') ? old('device-datasheet') : '' }}" placeholder="Datasheet link">
                                     <textarea id="device-description" name="device-description" type="text" class="form-control" value="{{ old('device-description') ? old('device-description') : '' }}" placeholder="{{ is_null(old('device-description')) ? 'Device description'  : ''}}"></textarea>
-                                    <div class="panel tag-panel">
+                                    <div class="panel tag-panel space">
                                         <div class="panel-body">
                                             <select data-role="tagsinput" value="" type="text" id="tags" name="tags[]" placeholder="Add tags" multiple></select>
                                         </div>
@@ -305,9 +305,6 @@
                                             <li> <i class="fa-li fa fa-hourglass-o"></i>Speed: {{ ($device->speed != null && $device->speed != '') ? $device->speed : 'N/A' }}</li>
                                             <li> <i class="fa-li fa fa-industry"></i>Manufacturers: {{ $device->manufacturers }}</li>
                                             <li> <i class="fa-li fa fa-shopping-cart"></i>Available: {{ $device->available }}</li>
-                                            @if(!is_null($device->datasheet))
-                                                <li> <i class="fa-li fa fa-file"></i>Datasheet: <a href="{{ $device->datasheet }}">Get the Datasheet</a></li>
-                                            @endif
                                         </ul>
                                     </div>
                                     <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 hidden-xs hidden-md">
@@ -338,10 +335,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12 col-xs-12 col-md-12 col-sm-12">
+                                    <div class="col-md-12 col-xs-12 col-md-12 col-sm-12 space">
                                         @foreach($device->links as $link)
-                                            <a href="{{ $link->address }}"><span class="label label-info">{{ $link->address }}</span></a>
+                                            <a href="{{ $link->address }}"><span class="label label-info">{{ explode('/',explode('://',$link->address)[1])[0] }}</span></a>
                                         @endforeach
+                                        @if(!is_null($device->datasheet))
+                                            <a href="{{ $device->datasheet }}"><span class="label label-info">Datasheet</span></a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -395,7 +395,7 @@
                 $('#view-option').click();
             }
 
-            $('[data-toggle="popover"]').popover();
+            $('[data-toggle="tooltip"]').tooltip();
 
             @if(!is_null($tags))
                 @foreach($tags as $tag)

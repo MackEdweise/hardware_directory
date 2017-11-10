@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Device;
 use App\Tag;
+use App\Link;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use SSH;
@@ -77,6 +78,8 @@ class DeviceController
             $device->available = $request->input('device-available');
         }
 
+        $device->save();
+
         if(!is_null($request->file('device-image'))){
 
             $image = $request->file('device-image');
@@ -118,9 +121,20 @@ class DeviceController
 
         $currentUser = Auth::user();
         $devices = Device::all();
+        $tags = Tag::all();
+
+        $uniqueTags = [];
+
+        foreach($tags as $tag){
+            if(!array_key_exists($tag->name,$uniqueTags)){
+                $uniqueTags[$tag->name] = $tag;
+            }
+        }
+
         return view('home')->with([
             'currentUser' => $currentUser,
-            'devices' => $devices
+            'devices' => $devices,
+            'tags' => $tags
         ]);
     }
 }
