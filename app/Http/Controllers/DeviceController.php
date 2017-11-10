@@ -102,6 +102,18 @@ class DeviceController
             }
         }
 
+        if(!is_null($request->input('links'))) {
+
+            foreach ($request->input('links') as $link) {
+                $new = new Link();
+                $new->device_id = $device->id;
+                $new->address = $link;
+                $new->created_at = date('Y-m-d H:i:s');
+                $new->updated_at = date('Y-m-d H:i:s');
+                $new->save();
+            }
+        }
+
         $device->save();
 
         $currentUser = Auth::user();

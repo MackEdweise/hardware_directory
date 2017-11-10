@@ -2,14 +2,14 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model {
+class Link extends Model {
 
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = "tags";
+    protected $table = "links";
 
     public function Device(){
         return $this->belongsTo('App\Device','device_id');

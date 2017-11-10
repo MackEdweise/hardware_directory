@@ -55,7 +55,7 @@
         </div>
         <div class="row" id="deviceWindow">
         @foreach($devices as $device)
-            <div class="device col-lg-4 col-md-6 col-sm-12 col-xs-12 @foreach($device->Tags as $tag) {{ ' device-'.$tag->name.' ' }} @endforeach">
+            <div class="device col-lg-6 col-md-6 col-sm-12 col-xs-12 @foreach($device->Tags as $tag) {{ ' device-'.$tag->name.' ' }} @endforeach">
                 <div class="deviceWindow-item space center">
                     <a class="deviceWindow-link" data-toggle="modal" href="{{ '#deviceWindowModal'.$device->id }}">
                         <div class="deviceWindow-hover">
@@ -254,6 +254,11 @@
                                             <select data-role="tagsinput" value="" type="text" id="tags" name="tags[]" placeholder="Add tags" multiple></select>
                                         </div>
                                     </div>
+                                    <div class="panel tag-panel">
+                                        <div class="panel-body">
+                                            <select data-role="tagsinput" value="" type="text" id="links" name="links[]" placeholder="Add links" multiple></select>
+                                        </div>
+                                    </div>
                                     <button type="submit" class="btn btn-success add-submit space">Save</button>
                                 </div>
                             </div>
@@ -300,6 +305,9 @@
                                             <li> <i class="fa-li fa fa-hourglass-o"></i>Speed: {{ ($device->speed != null && $device->speed != '') ? $device->speed : 'N/A' }}</li>
                                             <li> <i class="fa-li fa fa-industry"></i>Manufacturers: {{ $device->manufacturers }}</li>
                                             <li> <i class="fa-li fa fa-shopping-cart"></i>Available: {{ $device->available }}</li>
+                                            @if(!is_null($device->datasheet))
+                                                <li> <i class="fa-li fa fa-file"></i>Datasheet: <a href="{{ $device->datasheet }}">Get the Datasheet</a></li>
+                                            @endif
                                         </ul>
                                     </div>
                                     <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 hidden-xs hidden-md">
@@ -329,6 +337,13 @@
                                         @endforeach
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12 col-md-12 col-sm-12">
+                                        @foreach($device->links as $link)
+                                            <a href="{{ $link->address }}"><span class="label label-info">{{ $link->address }}</span></a>
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -348,6 +363,7 @@
 
             $('.data-table').DataTable();
             $('#tags').tagsinput();
+            $('#links').tagsinput();
 
             $('#datasheet-option').on('click', function(){
                 $('#view-option').removeClass('active');

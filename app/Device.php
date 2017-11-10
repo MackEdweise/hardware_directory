@@ -22,4 +22,7 @@ class Device extends Model
     public function Tags(){
         return $this->hasMany('App\Tag', 'device_id');
     }
+    public function Links(){
+        return $this->hasMany('App\Link', 'device_id');
+    }
 }
