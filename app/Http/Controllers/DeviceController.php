@@ -39,9 +39,19 @@ class DeviceController
 
         if ($validator->fails()) {
             $devices = Device::all();
+            $tags = Tag::all();
+
+            $uniqueTags = [];
+
+            foreach($tags as $tag){
+                if(!array_key_exists($tag->name,$uniqueTags)){
+                    $uniqueTags[$tag->name] = $tag;
+                }
+            }
             return Redirect::route('home')->withErrors($validator)->withInput()->with([
                 'currentUser' => $currentUser,
-                'devices' => $devices
+                'devices' => $devices,
+                'tags' => $uniqueTags
             ]);
         }
 
@@ -134,7 +144,137 @@ class DeviceController
         return view('home')->with([
             'currentUser' => $currentUser,
             'devices' => $devices,
-            'tags' => $tags
+            'tags' => $uniqueTags
+        ]);
+    }
+    public function edit(Request $request){
+
+        $rules = array(
+            '_device_id' => 'required',
+        );
+
+        $messages = [
+            '_device_id.required' => 'Device edit was unsuccessful due to an error.'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        $currentUser = Auth::user();
+
+        if ($validator->fails()) {
+            $devices = Device::all();
+            $tags = Tag::all();
+
+            $uniqueTags = [];
+
+            foreach($tags as $tag){
+                if(!array_key_exists($tag->name,$uniqueTags)){
+                    $uniqueTags[$tag->name] = $tag;
+                }
+            }
+            return Redirect::route('home')->withErrors($validator)->withInput()->with([
+                'currentUser' => $currentUser,
+                'devices' => $devices,
+                'tags' => $uniqueTags
+            ]);
+        }
+
+        $device = Device::where('id', '=', $request->input('_device_id'))->first();
+
+        $device->name = $request->input('device-name-'.$device->id);
+        $device->description = $request->input('device-description-'.$device->id);
+
+        if(!is_null($request->input('device-connectivity-'.$device->id))){
+            $device->connectivity = $request->input('device-connectivity-'.$device->id);
+        }
+        if(!is_null($request->input('device-low-'.$device->id))){
+            $device->low_voltage = $request->input('device-low-'.$device->id);
+        }
+        if(!is_null($request->input('device-high-'.$device->id))){
+            $device->high_voltage = $request->input('device-high-'.$device->id);
+        }
+        if(!is_null($request->input('device-speed-'.$device->id))){
+            $device->speed = $request->input('device-speed-'.$device->id);
+        }
+        if(!is_null($request->input('device-manufacturers-'.$device->id))){
+            $device->manufacturers = $request->input('device-manufacturers-'.$device->id);
+        }
+        if(!is_null($request->input('device-platform-'.$device->id))){
+            $device->platform = $request->input('device-platform-'.$device->id);
+        }
+        if(!is_null($request->input('device-datasheet-'.$device->id))){
+            $device->datasheet = $request->input('device-datasheet-'.$device->id);
+        }
+        if(!is_null($request->input('device-category-'.$device->id))){
+            $device->category = $request->input('device-category-'.$device->id);
+        }
+        if(!is_null($request->input('device-available-'.$device->id))){
+            $device->available = $request->input('device-available-'.$device->id);
+        }
+
+        $device->save();
+
+        if(!is_null($request->file('device-image-'.$device->id))){
+
+            $image = $request->file('device-image-'.$device->id);
+            $mime = '.'.$image->getClientOriginalExtension();
+            $imageName = $currentUser->id.'-avatar'.$mime;
+
+            SSH::into('Blue')->put($image->getRealPath(), '/home/nginx/html/HardwareDirectory/'.$imageName);
+
+            $device->image = $imageName;
+
+            Storage::disk('public')->delete($imageName);
+        }
+
+        $oldTags = Tag::where('device_id', '=', $request->input('_device_id'));
+        $oldTags->delete();
+
+        if(!is_null($request->input('tags-'.$device->id))) {
+
+            foreach ($request->input('tags-'.$device->id) as $tag) {
+                $new = new Tag();
+                $new->device_id = $device->id;
+                $new->name = $tag;
+                $new->created_at = date('Y-m-d H:i:s');
+                $new->updated_at = date('Y-m-d H:i:s');
+                $new->save();
+            }
+        }
+
+        $oldLinks = Link::where('device_id', '=', $request->input('_device_id'));
+        $oldLinks->delete();
+
+        if(!is_null($request->input('links-'.$device->id))) {
+
+            foreach ($request->input('links-'.$device->id) as $link) {
+                $new = new Link();
+                $new->device_id = $device->id;
+                $new->address = $link;
+                $new->created_at = date('Y-m-d H:i:s');
+                $new->updated_at = date('Y-m-d H:i:s');
+                $new->save();
+            }
+        }
+
+        $device->save();
+
+        $currentUser = Auth::user();
+        $devices = Device::all();
+        $tags = Tag::all();
+
+        $uniqueTags = [];
+
+        foreach($tags as $tag){
+            if(!array_key_exists($tag->name,$uniqueTags)){
+                $uniqueTags[$tag->name] = $tag;
+            }
+        }
+
+        return view('home')->with([
+            'currentUser' => $currentUser,
+            'devices' => $devices,
+            'tags' => $uniqueTags
         ]);
     }
 }

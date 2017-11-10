@@ -270,6 +270,67 @@
     </div>
 </div>
 @foreach($devices as $device)
+    <div class="deviceWindow-modal modal fade" id="{{ 'deviceEditModal'.$device->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 col-lg-10 col-lg-offset-1">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto">
+                        <div class="modal-body">
+                            <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('edit_device') }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="_device_id" value="{{ $device->id }}">
+                                <div class="row">
+                                    <div class="col-md-7 col-sm-12 col-xs-12 col-lg-8">
+                                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
+                                            <input class="space-left-large" type="file" name="{{ 'device-image-'.$device->id }}" id="{{ 'device-image-'.$device->id }}" size="20" />
+                                        </div>
+                                        <div class="col-md-5 col-lg-4 col-sm-6 col-xs-6">
+                                            <p>Device Image</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-8 col-xs-8 col-sm-offset-2 col-md-offset-1 col-lg-offset-1 col-xs-offset-2 col-lg-5 text-center space">
+                                        <ul class="fa-ul text-left">
+                                            <li> <i class="fa-li fa fa-feed"></i><input id="{{ 'device-connectivity-'.$device->id }}" name="{{ 'device-connectivity-'.$device->id }}" type="text" class="form-control " value="{{ old('device-connectivity-'.$device->id) ? old('device-connectivity-'.$device->id) : $device->connectivity }}" placeholder="Device connectivity"></li>
+                                            <li> <i class="fa-li fa fa-battery-1"></i><input id="{{ 'device-low-'.$device->id }}" name="{{ 'device-low-'.$device->id }}" type="number" step="0.1" class="form-control " value="{{ old('device-low-'.$device->id) ? old('device-low-'.$device->id) : $device->low_voltage }}" placeholder="Device's low supply voltage"></li>
+                                            <li> <i class="fa-li fa fa-battery-4"></i><input id="{{ 'device-high-'.$device->id }}" name="{{ 'device-high-'.$device->id }}" type="number" step="0.1" class="form-control " value="{{ old('device-high-'.$device->id) ? old('device-high-'.$device->id) : $device->high_voltage }}" placeholder="Device's high supply voltage"></li>
+                                            <li> <i class="fa-li fa fa-hourglass-o"></i><input id="{{ 'device-speed-'.$device->id }}" name="{{ 'device-speed-'.$device->id }}" type="text" class="form-control " value="{{ old('device-speed-'.$device->id) ? old('device-speed-'.$device->id) : $device->speed }}" placeholder="Device speed"></li>
+                                            <li> <i class="fa-li fa fa-industry"></i><input id="{{ 'device-manufacturers-'.$device->id }}" name="{{ 'device-manufacturers-'.$device->id }}" type="text" class="form-control " value="{{ old('device-manufacturers-'.$device->id) ? old('device-manufacturers-'.$device->id) : $device->manufacturers }}" placeholder="Device manufacturers"></li>
+                                            <li> <i class="fa-li fa fa-shopping-cart"></i><input id="{{ 'device-available-'.$device->id }}" name="{{ 'device-available-'.$device->id }}" type="number" step="1" class="form-control " value="{{ old('device-available-'.$device->id) ? old('device-available-'.$device->id) : $device->available }}" placeholder="Number available"></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-5 col-sm-8 col-xs-8 col-sm-offset-2 col-md-offset-0 col-lg-offset-0 col-xs-offset-2 col-lg-5 text-center space">
+                                        <input id="{{ 'device-name-'.$device->id }}" name="{{ 'device-name-'.$device->id }}" type="text" class="form-control " value="{{ old('device-name-'.$device->id) ? old('device-name-'.$device->id) : $device->name }}" placeholder="Device name">
+                                        <input id="{{ 'device-platform-'.$device->id }}" name="{{ 'device-platform-'.$device->id }}" type="text" class="form-control " value="{{ old('device-platform-'.$device->id) ? old('device-platform-'.$device->id) : $device->platform }}" placeholder="Device platform">
+                                        <input id="{{ 'device-category-'.$device->id }}" name="{{ 'device-category-'.$device->id }}" type="text" class="form-control " value="{{ old('device-category-'.$device->id) ? old('device-category-'.$device->id) : $device->category }}" placeholder="Device category">
+                                        <input id="{{ 'device-datasheet-'.$device->id }}" name="{{ 'device-datasheet-'.$device->id }}" type="text" class="form-control " value="{{ old('device-datasheet-'.$device->id) ? old('device-datasheet-'.$device->id) : $device->datasheet }}" placeholder="Datasheet link">
+                                        <textarea id="{{ 'device-description-'.$device->id }}" name="{{ 'device-description-'.$device->id }}" type="text" class="form-control" placeholder="{{ is_null(old('device-description-'.$device->id)) ? 'Device description'  : ''}}">{{ old('device-description-'.$device->id) ? old('device-description-'.$device->id) : $device->description }}</textarea>
+                                        <div class="panel tag-panel space">
+                                            <div class="panel-body">
+                                                <select data-role="tagsinput" value="" type="text" id="{{ 'tags-'.$device->id }}" name="{{ 'tags-'.$device->id.'[]' }}" placeholder="Add tags" multiple></select>
+                                            </div>
+                                        </div>
+                                        <div class="panel tag-panel">
+                                            <div class="panel-body">
+                                                <select data-role="tagsinput" value="" type="text" id="{{ 'links-'.$device->id }}" name="{{ 'links-'.$device->id.'[]' }}" placeholder="Add links" multiple></select>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-success add-submit space">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="deviceWindow-modal modal fade" id="{{ 'deviceWindowModal'.$device->id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 col-lg-10 col-lg-offset-1">
             <div class="modal-content">
@@ -288,10 +349,16 @@
                                         <img class="img-fluid d-block mx-auto device-image" src="{{ $device->image ? 'http://www.datablue.stream/HardwareDirectory/'.$device->image : 'img/hddirlogo.png' }}" alt="">
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-center hidden-lg hidden-md">
+                                        @if(!is_null($currentUser) && ($currentUser->admin == true))
+                                            <button class="btn btn-primary btn-md" data-dismiss="modal" data-toggle="modal" href="{{ '#deviceEditModal'.$device->id }}">Edit</button>
+                                        @endif
                                         <h2>{{ $device->name }}</h2>
                                         <p class="item-intro text-muted">{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</p>
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-xs hidden-sm">
+                                        @if(!is_null($currentUser) && ($currentUser->admin == true))
+                                            <button class="btn btn-primary btn-md" data-dismiss="modal" data-toggle="modal" href="{{ '#deviceEditModal'.$device->id }}">Edit</button>
+                                        @endif
                                         <h2>{{ $device->name }}</h2>
                                         <p class="item-intro text-muted">{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</p>
                                     </div>
@@ -407,6 +474,15 @@
                     });
                 @endforeach
             @endif
+
+            @foreach($devices as $device)
+                @foreach($device->tags as $tag)
+                    $("{{ '#tags-'.$device->id }}").tagsinput('add', "{{ $tag->name }}");
+                @endforeach
+                @foreach($device->links as $link)
+                    $("{{ '#links-'.$device->id }}").tagsinput('add', "{{ $link->address }}");
+                @endforeach
+            @endforeach
         });
     </script>
 @endsection
