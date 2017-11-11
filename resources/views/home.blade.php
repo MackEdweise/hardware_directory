@@ -240,7 +240,6 @@
                                         <li> <i class="fa-li fa fa-battery-4"></i><input id="device-high" name="device-high" type="number" step="0.1" class="form-control " value="{{ old('device-high') ? old('device-high') : '' }}" placeholder="Device's high supply voltage"></li>
                                         <li> <i class="fa-li fa fa-hourglass-o"></i><input id="device-speed" name="device-speed" type="text" class="form-control " value="{{ old('device-speed') ? old('device-speed') : '' }}" placeholder="Device speed"></li>
                                         <li> <i class="fa-li fa fa-industry"></i><input id="device-manufacturers" name="device-manufacturers" type="text" class="form-control " value="{{ old('device-manufacturers') ? old('device-manufacturers') : '' }}" placeholder="Device manufacturers"></li>
-                                        <li> <i class="fa-li fa fa-shopping-cart"></i><input id="device-available" name="device-available" type="number" step="1" class="form-control " value="{{ old('device-available') ? old('device-available') : '' }}" placeholder="Number available"></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-5 col-sm-8 col-xs-8 col-sm-offset-2 col-md-offset-0 col-lg-offset-0 col-xs-offset-2 col-lg-5 text-center space">
@@ -302,7 +301,6 @@
                                             <li> <i class="fa-li fa fa-battery-4"></i><input id="{{ 'device-high-'.$device->id }}" name="{{ 'device-high-'.$device->id }}" type="number" step="0.1" class="form-control " value="{{ old('device-high-'.$device->id) ? old('device-high-'.$device->id) : $device->high_voltage }}" placeholder="Device's high supply voltage"></li>
                                             <li> <i class="fa-li fa fa-hourglass-o"></i><input id="{{ 'device-speed-'.$device->id }}" name="{{ 'device-speed-'.$device->id }}" type="text" class="form-control " value="{{ old('device-speed-'.$device->id) ? old('device-speed-'.$device->id) : $device->speed }}" placeholder="Device speed"></li>
                                             <li> <i class="fa-li fa fa-industry"></i><input id="{{ 'device-manufacturers-'.$device->id }}" name="{{ 'device-manufacturers-'.$device->id }}" type="text" class="form-control " value="{{ old('device-manufacturers-'.$device->id) ? old('device-manufacturers-'.$device->id) : $device->manufacturers }}" placeholder="Device manufacturers"></li>
-                                            <li> <i class="fa-li fa fa-shopping-cart"></i><input id="{{ 'device-available-'.$device->id }}" name="{{ 'device-available-'.$device->id }}" type="number" step="1" class="form-control " value="{{ old('device-available-'.$device->id) ? old('device-available-'.$device->id) : $device->available }}" placeholder="Number available"></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-5 col-sm-8 col-xs-8 col-sm-offset-2 col-md-offset-0 col-lg-offset-0 col-xs-offset-2 col-lg-5 text-center space">
@@ -371,7 +369,6 @@
                                             <li> <i class="fa-li fa fa-battery-4"></i>Supply Voltage (High): {{ $device->high_voltage }}</li>
                                             <li> <i class="fa-li fa fa-hourglass-o"></i>Speed: {{ ($device->speed != null && $device->speed != '') ? $device->speed : 'N/A' }}</li>
                                             <li> <i class="fa-li fa fa-industry"></i>Manufacturers: {{ $device->manufacturers }}</li>
-                                            <li> <i class="fa-li fa fa-shopping-cart"></i>Available: {{ $device->available }}</li>
                                         </ul>
                                     </div>
                                     <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 hidden-xs hidden-md">
@@ -381,7 +378,6 @@
                                             <li> <i class="fa-li fa fa-battery-4"></i>Supply Voltage (High): {{ $device->high_voltage }}</li>
                                             <li> <i class="fa-li fa fa-hourglass-o"></i>Speed: {{ ($device->speed != null && $device->speed != '') ? $device->speed : 'N/A' }}</li>
                                             <li> <i class="fa-li fa fa-industry"></i>Manufacturers: {{ $device->manufacturers }}</li>
-                                            <li> <i class="fa-li fa fa-shopping-cart"></i>Available: {{ $device->available }}</li>
                                         </ul>
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-sm hidden-xs">
