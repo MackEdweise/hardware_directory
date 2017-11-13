@@ -94,7 +94,7 @@ class DeviceController
 
             $image = $request->file('device-image');
             $mime = '.'.$image->getClientOriginalExtension();
-            $imageName = $currentUser->id.'-avatar'.$mime;
+            $imageName = $device->id.'-avatar'.$mime;
 
             SSH::into('Blue')->put($image->getRealPath(), '/home/nginx/html/HardwareDirectory/'.$imageName);
 
@@ -218,7 +218,7 @@ class DeviceController
 
             $image = $request->file('device-image-'.$device->id);
             $mime = '.'.$image->getClientOriginalExtension();
-            $imageName = $currentUser->id.'-avatar'.$mime;
+            $imageName = $device->id.'-avatar'.$mime;
 
             SSH::into('Blue')->put($image->getRealPath(), '/home/nginx/html/HardwareDirectory/'.$imageName);
 
