@@ -364,20 +364,20 @@
                                 <div class="row">
                                     <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 hidden-sm hidden-lg">
                                         <ul class="fa-ul text-left space-left">
-                                            <li> <i class="fa-li fa fa-feed"></i>Connectivity: {{ $device->connectivity }}</li>
-                                            <li> <i class="fa-li fa fa-battery-1"></i>Supply Voltage (Low): {{ $device->low_voltage }}</li>
-                                            <li> <i class="fa-li fa fa-battery-4"></i>Supply Voltage (High): {{ $device->high_voltage }}</li>
+                                            <li> <i class="fa-li fa fa-feed"></i>Connectivity: {{ ($device->connectivity != null && $device->connectivity != '') ? $device->connectivity : 'N/A'}}</li>
+                                            <li> <i class="fa-li fa fa-battery-1"></i>Supply Voltage (Low): {{ ($device->low_voltage != null && $device->low_voltage != '') ? $device->low_voltage : 'N/A' }}</li>
+                                            <li> <i class="fa-li fa fa-battery-4"></i>Supply Voltage (High): {{ ($device->high_voltage != null && $device->high_voltage != '') ? $device->high_voltage : 'N/A' }}</li>
                                             <li> <i class="fa-li fa fa-hourglass-o"></i>Speed: {{ ($device->speed != null && $device->speed != '') ? $device->speed : 'N/A' }}</li>
-                                            <li> <i class="fa-li fa fa-industry"></i>Manufacturers: {{ $device->manufacturers }}</li>
+                                            <li> <i class="fa-li fa fa-industry"></i>Manufacturers: {{ ($device->manufacturers != null && $device->manufacturers != '') ? $device->manufacturers : 'N/A' }}</li>
                                         </ul>
                                     </div>
                                     <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 hidden-xs hidden-md">
                                         <ul class="fa-ul text-left space-left-large">
-                                            <li> <i class="fa-li fa fa-feed"></i>Connectivity: {{ $device->connectivity }}</li>
-                                            <li> <i class="fa-li fa fa-battery-1"></i>Supply Voltage (Low): {{ $device->low_voltage }}</li>
-                                            <li> <i class="fa-li fa fa-battery-4"></i>Supply Voltage (High): {{ $device->high_voltage }}</li>
+                                            <li> <i class="fa-li fa fa-feed"></i>Connectivity: {{ ($device->connectivity != null && $device->connectivity != '') ? $device->connectivity : 'N/A'}}</li>
+                                            <li> <i class="fa-li fa fa-battery-1"></i>Supply Voltage (Low): {{ ($device->low_voltage != null && $device->low_voltage != '') ? $device->low_voltage : 'N/A' }}</li>
+                                            <li> <i class="fa-li fa fa-battery-4"></i>Supply Voltage (High): {{ ($device->high_voltage != null && $device->high_voltage != '') ? $device->high_voltage : 'N/A' }}</li>
                                             <li> <i class="fa-li fa fa-hourglass-o"></i>Speed: {{ ($device->speed != null && $device->speed != '') ? $device->speed : 'N/A' }}</li>
-                                            <li> <i class="fa-li fa fa-industry"></i>Manufacturers: {{ $device->manufacturers }}</li>
+                                            <li> <i class="fa-li fa fa-industry"></i>Manufacturers: {{ ($device->manufacturers != null && $device->manufacturers != '') ? $device->manufacturers : 'N/A' }}</li>
                                         </ul>
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-sm hidden-xs">
