@@ -18,15 +18,16 @@
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
-
-    <!-- favicon -->
-    <link rel="shortcut icon" href="{{ URL::asset('img/hddirlogo.png') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/select2.min.css') }}">
 
     <!-- jQuery -->
     <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ URL::asset('img/hddirlogo.png') }}">
 </head>
 <body>
     <div id="app">

@@ -44,13 +44,16 @@
     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" id="device-container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                <div class="btn-group" role="group">
-                    @if(!is_null($tags))
+                <p>Filter Devices</p>
+                @if(!is_null($tags))
+                    <select id="search-tags" name="search-tags[]" style="width:500px;" multiple="multiple">
                         @foreach($tags as $tag)
-                            <button id="{{ $tag->name }}-select" type="button" class="btn btn-secondary tag-select">{{ $tag->name }}</button>
+                            <option value="{{ $tag->name }}" style="width:100px;">
+                                {{ $tag->name }}
+                            </option>
                         @endforeach
-                    @endif
-                </div>
+                    </select>
+                @endif
             </div>
         </div>
         <div class="row" id="deviceWindow">
@@ -421,6 +424,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+    <script src="{{ URL::asset('js/select2.full.min.js') }}"></script>
     <script>
         $(document).ready(function() {
 
@@ -461,14 +465,18 @@
             $('[data-toggle="tooltip"]').tooltip();
 
             @if(!is_null($tags))
-                @foreach($tags as $tag)
-                    $('#{{ $tag->name }}-select').on('click', function(){
-                        $('.tag-select').removeClass('active');
-                        $(this).addClass('active');
+                $('#search-tags').select2({ width: 'resolve' });
+                $('#search-tags').on("change",function(e){
+                    if($('#search-tags').val().length > 0) {
                         $('.device').hide();
-                        $('.device-{{ $tag->name }}').show();
-                    });
-                @endforeach
+                        for (var index in $('#search-tags').val()) {
+                            $('.device-' + $('#search-tags').val()[index]).show();
+                        }
+                    }
+                    else{
+                        $('.device').show();
+                    }
+                });
             @endif
 
             @foreach($devices as $device)
