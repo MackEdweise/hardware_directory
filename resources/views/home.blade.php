@@ -43,22 +43,10 @@
     </div>
     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" id="device-container">
         <div class="row">
-            <div class="hidden-xs col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                 <p>Filter Devices</p>
                 @if(!is_null($tags))
-                    <select id="search-tags" name="search-tags[]" style="width:500px;" multiple="multiple">
-                        @foreach($tags as $tag)
-                            <option value="{{ $tag->name }}" style="width:100px;">
-                                {{ $tag->name }}
-                            </option>
-                        @endforeach
-                    </select>
-                @endif
-            </div>
-            <div class="hidden-sm hidden-md hidden-lg col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                <p>Filter Devices</p>
-                @if(!is_null($tags))
-                    <select id="search-tags" name="search-tags[]" style="width:250px;" multiple="multiple">
+                    <select id="search-tags" name="search-tags[]" style="width:300px;" multiple="multiple">
                         @foreach($tags as $tag)
                             <option value="{{ $tag->name }}" style="width:100px;">
                                 {{ $tag->name }}

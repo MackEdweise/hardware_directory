@@ -61,11 +61,10 @@
       <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="60" column="81" selection-start-line="60" selection-start-column="81" selection-end-line="60" selection-end-column="81" />
+            <state relative-caret-position="60">
+              <caret line="48" column="80" selection-start-line="48" selection-start-column="80" selection-end-line="48" selection-end-column="80" />
               <folding>
-                <element signature="e#2228#2248#0#HTML" expanded="true" />
-                <marker date="1510798138000" expanded="true" signature="33306:34320" ph="..." />
+                <marker date="1510798242000" expanded="true" signature="32627:33641" ph="..." />
               </folding>
             </state>
           </provider>
@@ -361,12 +360,12 @@
       <workItem from="1510709828135" duration="473000" />
       <workItem from="1510765848354" duration="1922000" />
       <workItem from="1510770027279" duration="5000" />
-      <workItem from="1510798089558" duration="49000" />
+      <workItem from="1510798089558" duration="153000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64127000" />
+    <option name="totallyTimeSpent" value="64231000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1362" height="745" extended-state="6" />
@@ -452,8 +451,7 @@
         <state relative-caret-position="165">
           <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
           <folding>
-            <element signature="e#2228#2248#0#HTML" expanded="true" />
-            <marker date="1510798138000" expanded="true" signature="33306:34320" ph="..." />
+            <marker date="1510798242000" expanded="true" signature="32627:33641" ph="..." />
           </folding>
         </state>
       </provider>
@@ -786,11 +784,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="60" column="81" selection-start-line="60" selection-start-column="81" selection-end-line="60" selection-end-column="81" />
+        <state relative-caret-position="60">
+          <caret line="48" column="80" selection-start-line="48" selection-start-column="80" selection-end-line="48" selection-end-column="80" />
           <folding>
-            <element signature="e#2228#2248#0#HTML" expanded="true" />
-            <marker date="1510798138000" expanded="true" signature="33306:34320" ph="..." />
+            <marker date="1510798242000" expanded="true" signature="32627:33641" ph="..." />
           </folding>
         </state>
       </provider>
