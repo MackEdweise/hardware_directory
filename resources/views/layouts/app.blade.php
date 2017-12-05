@@ -44,7 +44,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand page-scroll" href="{{ route('home') }}">hardware<h3 style="display: inline;" class="text-danger">.</h3>dir</a>
+                    <a class="navbar-brand page-scroll" href="http://www.hardwaredirectory.ca/">hardware<h3 style="display: inline;" class="text-danger">.</h3>dir</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">

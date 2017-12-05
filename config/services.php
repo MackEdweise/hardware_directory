@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => 'mg.sigma.ca',
+        'secret' => 'key-985cb0a8c0cbe895e1c6b82aacb49942',
     ],
 
     'ses' => [
