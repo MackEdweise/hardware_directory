@@ -38,6 +38,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+                        <a href="{{ route('home') }}">Enter</a>
+                    </li>
+                    <li>
                         <a href="{{ route('login') }}">Login</a>
                     </li>
                     <li>
