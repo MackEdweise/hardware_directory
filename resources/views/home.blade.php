@@ -54,31 +54,62 @@
                         @endforeach
                     </select>
                 @endif
+                @if(!is_null($currentUser))
+                    <button class="btn btn-info" id="sort-mine">Your Devices</button>
+                @endif
             </div>
         </div>
         <div class="row" id="deviceWindow">
-        @foreach($devices as $device)
-            <div class="device col-lg-6 col-md-6 col-sm-12 col-xs-12 @foreach($device->Tags as $tag) {{ ' device-'.$tag->name.' ' }} @endforeach">
-                <div class="deviceWindow-item space center">
-                    <a class="deviceWindow-link" data-toggle="modal" href="{{ '#deviceWindowModal'.$device->id }}">
-                        <div class="deviceWindow-hover">
-                            <div class="deviceWindow-hover-content">
-                                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+            <div class="deviceWindowAll">
+                @foreach($devices as $device)
+                    <div class="device col-lg-6 col-md-6 col-sm-12 col-xs-12 @foreach($device->Tags as $tag) {{ ' device-'.$tag->name.' ' }} @endforeach">
+                        <div class="deviceWindow-item space center">
+                            <a class="deviceWindow-link" data-toggle="modal" href="{{ '#deviceWindowModal'.$device->id }}">
+                                <div class="deviceWindow-hover">
+                                    <div class="deviceWindow-hover-content">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                                            <p>{{ $device->name }}</p>
+                                            <small>{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="device-image-container">
+                                    <img class="img-fluid center device-image" src="{{ $device->image ? 'http://www.datablue.stream/HardwareDirectory/'.$device->image : 'img/device-filler.png' }}" alt="">
+                                </div>
+                            </a>
+                            <div class="deviceWindow-caption">
+                                <p>{{ $device->name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            @if(!is_null($currentUser))
+                <div class="deviceWindowYours" style="display:none;">
+                    @foreach($currentUser->Devices()->with('Tags')->get() as $device)
+                        <div class="device col-lg-6 col-md-6 col-sm-12 col-xs-12 @foreach($device->Tags as $tag) {{ ' device-'.$tag->name.' ' }} @endforeach">
+                            <div class="deviceWindow-item space center">
+                                <a class="deviceWindow-link" data-toggle="modal" href="{{ '#deviceWindowModal'.$device->id }}">
+                                    <div class="deviceWindow-hover">
+                                        <div class="deviceWindow-hover-content">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                                                <p>{{ $device->name }}</p>
+                                                <small>{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="device-image-container">
+                                        <img class="img-fluid center device-image" src="{{ $device->image ? 'http://www.datablue.stream/HardwareDirectory/'.$device->image : 'img/device-filler.png' }}" alt="">
+                                    </div>
+                                </a>
+                                <div class="deviceWindow-caption">
                                     <p>{{ $device->name }}</p>
-                                    <small>{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</small>
                                 </div>
                             </div>
                         </div>
-                        <div class="device-image-container">
-                            <img class="img-fluid center device-image" src="{{ $device->image ? 'http://www.datablue.stream/HardwareDirectory/'.$device->image : 'img/device-filler.png' }}" alt="">
-                        </div>
-                    </a>
-                    <div class="deviceWindow-caption">
-                        <p>{{ $device->name }}</p>
-                    </div>
+                    @endforeach
                 </div>
-            </div>
-        @endforeach
+            @endif
         </div>
     </div>
     <div style="display: none;" class="col-lg-10 hidden-sm hidden-md hidden-xs datasheet-container">
@@ -501,6 +532,17 @@
                     $("{{ '#links-'.$device->id }}").tagsinput('add', "{{ $link->address }}");
                 @endforeach
             @endforeach
+
+            $('#sort-mine').on('click', function(){
+                $('.deviceWindowAll').toggle();
+                $('.deviceWindowYours').toggle();
+                if($('#sort-mine').text() == "Your Devices"){
+                    $('#sort-mine').text("All Devices");
+                }
+                else{
+                    $('#sort-mine').text("Your Devices");
+                }
+            });
         });
     </script>
 @endsection
