@@ -351,24 +351,32 @@
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-center hidden-lg hidden-md">
                                         @if(!is_null($currentUser) && ($currentUser->admin == true))
-                                            <button class="btn btn-primary btn-md" data-dismiss="modal" data-toggle="modal" href="{{ '#deviceEditModal'.$device->id }}">Edit</button>
-                                            <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('approve_device') }}">
-                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                <input type="hidden" name="_device_id" value="{{ $device->id }}">
-                                                <button class="btn btn-success btn-md" type="submit">Approve</button>
-                                            </form>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <button class="btn btn-primary btn-md" data-dismiss="modal" data-toggle="modal" href="{{ '#deviceEditModal'.$device->id }}">Edit</button>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('approve_device') }}">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="hidden" name="_device_id" value="{{ $device->id }}">
+                                                    <button class="btn btn-success btn-md" type="submit">Approve</button>
+                                                </form>
+                                            </div>
                                         @endif
                                         <h2>{{ $device->name }}</h2>
                                         <p class="item-intro text-muted">{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</p>
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-xs hidden-sm">
                                         @if(!is_null($currentUser) && ($currentUser->admin == true))
-                                            <button class="btn btn-primary btn-md" data-dismiss="modal" data-toggle="modal" href="{{ '#deviceEditModal'.$device->id }}">Edit</button>
-                                            <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('approve_device') }}">
-                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                <input type="hidden" name="_device_id" value="{{ $device->id }}">
-                                                <button class="btn btn-success btn-md" type="submit">Approve</button>
-                                            </form>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <button class="btn btn-primary btn-md" data-dismiss="modal" data-toggle="modal" href="{{ '#deviceEditModal'.$device->id }}">Edit</button>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('approve_device') }}">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="hidden" name="_device_id" value="{{ $device->id }}">
+                                                    <button class="btn btn-success btn-md" type="submit">Approve</button>
+                                                </form>
+                                            </div>
                                         @endif
                                         <h2>{{ $device->name }}</h2>
                                         <p class="item-intro text-muted">{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</p>
