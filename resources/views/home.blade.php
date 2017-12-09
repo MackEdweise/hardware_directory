@@ -55,7 +55,7 @@
                     </select>
                 @endif
                 @if(!is_null($currentUser))
-                    <button class="btn btn-info" id="sort-mine">Your Devices</button>
+                    <button class="btn btn-primary" id="sort-mine">Your Devices</button>
                 @endif
             </div>
         </div>
