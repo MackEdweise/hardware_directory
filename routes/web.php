@@ -34,4 +34,6 @@ Route::post('/add', 'DeviceController@add')->name('add_device');
 
 Route::post('/edit', 'DeviceController@edit')->name('edit_device');
 
+Route::post('/approve', 'DeviceController@approve')->name('approve_device');
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('log_me_out');

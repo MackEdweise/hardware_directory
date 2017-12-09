@@ -25,4 +25,7 @@ class Device extends Model
     public function Links(){
         return $this->hasMany('App\Link', 'device_id');
     }
+    public function User(){
+        return $this->belongsTo('App\User','user_id');
+    }
 }

@@ -24,7 +24,12 @@ class HomeController extends Controller
     public function index()
     {
         $currentUser = Auth::user();
-        $devices = Device::with('Tags')->get();
+        if($currentUser->admin){
+            $devices = Device::with('Tags')->get();
+        }
+        else{
+            $devices = Device::with('Tags')->where('approved','=',true)->orWhere('user_id','=',$currentUser->id)->get();
+        }
         $tags = Tag::all();
 
         $uniqueTags = [];

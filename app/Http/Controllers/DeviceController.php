@@ -38,7 +38,12 @@ class DeviceController
         $currentUser = Auth::user();
 
         if ($validator->fails()) {
-            $devices = Device::all();
+            if($currentUser->admin){
+                $devices = Device::with('Tags')->get();
+            }
+            else{
+                $devices = Device::with('Tags')->where('approved','=',true)->orWhere('user_id','=',$currentUser->id)->get();
+            }
             $tags = Tag::all();
 
             $uniqueTags = [];
@@ -127,10 +132,17 @@ class DeviceController
             }
         }
 
+        $device->user_id = $currentUser->id;
+        $device->approved = false;
+
         $device->save();
 
-        $currentUser = Auth::user();
-        $devices = Device::all();
+        if($currentUser->admin){
+            $devices = Device::with('Tags')->get();
+        }
+        else{
+            $devices = Device::with('Tags')->where('approved','=',true)->orWhere('user_id','=',$currentUser->id)->get();
+        }
         $tags = Tag::all();
 
         $uniqueTags = [];
@@ -162,7 +174,12 @@ class DeviceController
         $currentUser = Auth::user();
 
         if ($validator->fails()) {
-            $devices = Device::all();
+            if($currentUser->admin){
+                $devices = Device::with('Tags')->get();
+            }
+            else{
+                $devices = Device::with('Tags')->where('approved','=',true)->orWhere('user_id','=',$currentUser->id)->get();
+            }
             $tags = Tag::all();
 
             $uniqueTags = [];
@@ -260,7 +277,12 @@ class DeviceController
         $device->save();
 
         $currentUser = Auth::user();
-        $devices = Device::all();
+        if($currentUser->admin){
+            $devices = Device::with('Tags')->get();
+        }
+        else{
+            $devices = Device::with('Tags')->where('approved','=',true)->orWhere('user_id','=',$currentUser->id)->get();
+        }
         $tags = Tag::all();
 
         $uniqueTags = [];
@@ -276,5 +298,71 @@ class DeviceController
             'devices' => $devices,
             'tags' => $uniqueTags
         ]);
+    }
+    public function approve(Request $request)
+    {
+
+        $rules = array(
+            '_device_id' => 'required',
+        );
+
+        $messages = [
+            '_device_id.required' => 'Device approval was unsuccessful due to an error.'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        $currentUser = Auth::user();
+
+        if ($validator->fails()) {
+            if($currentUser->admin){
+                $devices = Device::with('Tags')->get();
+            }
+            else{
+                $devices = Device::with('Tags')->where('approved','=',true)->orWhere('user_id','=',$currentUser->id)->get();
+            }
+            $tags = Tag::all();
+
+            $uniqueTags = [];
+
+            foreach($tags as $tag){
+                if(!array_key_exists($tag->name,$uniqueTags)){
+                    $uniqueTags[$tag->name] = $tag;
+                }
+            }
+            return Redirect::route('home')->withErrors($validator)->withInput()->with([
+                'currentUser' => $currentUser,
+                'devices' => $devices,
+                'tags' => $uniqueTags
+            ]);
+        }
+
+        $device = Device::where('id','=',$request->input('_device_id'))->first();
+        $device->approved = true;
+
+        $device->save();
+
+        if($currentUser->admin){
+            $devices = Device::with('Tags')->get();
+        }
+        else{
+            $devices = Device::with('Tags')->where('approved','=',true)->orWhere('user_id','=',$currentUser->id)->get();
+        }
+        $tags = Tag::all();
+
+        $uniqueTags = [];
+
+        foreach($tags as $tag){
+            if(!array_key_exists($tag->name,$uniqueTags)){
+                $uniqueTags[$tag->name] = $tag;
+            }
+        }
+
+        return view('home')->with([
+            'currentUser' => $currentUser,
+            'devices' => $devices,
+            'tags' => $uniqueTags
+        ]);
+
     }
 }
