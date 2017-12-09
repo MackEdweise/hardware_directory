@@ -26,14 +26,7 @@ class GuestController extends Controller
     public function index()
     {
 
-        $currentUser = Auth::user();
-
-        if($currentUser->admin){
-            $devices = Device::with('Tags')->get();
-        }
-        else{
-            $devices = Device::with('Tags')->where('approved','=',true)->orWhere('user_id','=',$currentUser->id)->get();
-        }
+        $devices = Device::with('Tags')->where('approved','=',true)->orWhere('user_id','=',$currentUser->id)->get();
         $tags = Tag::all();
 
         $uniqueTags = [];
