@@ -28,6 +28,6 @@ class User extends Authenticatable
     ];
 
     public function Devices(){
-        return $this->hasMany('App\Devices');
+        return $this->hasMany('App\Device');
     }
 }

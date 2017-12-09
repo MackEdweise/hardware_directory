@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8017affd-10d5-47e0-abb1-cbf96e606efb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
     </list>
     <ignored path="hardware_directory.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="487" column="61" selection-start-line="487" selection-start-column="61" selection-end-line="487" selection-end-column="61" />
+            <state relative-caret-position="125">
+              <caret line="532" column="27" selection-start-line="532" selection-start-column="27" selection-end-line="532" selection-end-column="27" />
               <folding>
                 <element signature="e#4511#4532#0#HTML" expanded="true" />
                 <marker date="1512844333445" expanded="true" signature="36468:37884" ph="..." />
@@ -69,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+            <state relative-caret-position="435">
+              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -143,13 +142,13 @@
         <option value="$PROJECT_DIR$/config/services.php" />
         <option value="$PROJECT_DIR$/config/mail.php" />
         <option value="$PROJECT_DIR$/app/Device.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GuestController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
       </list>
     </option>
   </component>
@@ -367,12 +366,12 @@
       <workItem from="1512495673712" duration="2508000" />
       <workItem from="1512837060318" duration="2265000" />
       <workItem from="1512843389123" duration="177000" />
-      <workItem from="1512843927107" duration="413000" />
+      <workItem from="1512843927107" duration="496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69806000" />
+    <option name="totallyTimeSpent" value="69889000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1591" y="160" width="1362" height="745" extended-state="6" />
@@ -769,14 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -789,12 +780,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="487" column="61" selection-start-line="487" selection-start-column="61" selection-end-line="487" selection-end-column="61" />
+        <state relative-caret-position="125">
+          <caret line="532" column="27" selection-start-line="532" selection-start-column="27" selection-end-line="532" selection-end-column="27" />
           <folding>
             <element signature="e#4511#4532#0#HTML" expanded="true" />
             <marker date="1512844333445" expanded="true" signature="36468:37884" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
