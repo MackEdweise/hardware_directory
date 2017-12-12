@@ -405,7 +405,11 @@
                                                 <input type="hidden" name="_device_id" value="{{ $device->id }}">
                                                 <div class="btn-group" role="group">
                                                     <button class="btn btn-primary btn-md" data-dismiss="modal" data-toggle="modal" href="{{ '#deviceEditModal'.$device->id }}">Edit</button>
-                                                    <button class="btn btn-success btn-md" type="submit">Approve</button>
+                                                    @if($device->approved != true)
+                                                        <button class="btn btn-success btn-md" type="submit">Approve</button>
+                                                    @else
+                                                        <button class="btn btn-danger btn-md" type="submit">Disapprove</button>
+                                                    @endif
                                                 </div>
                                             </form>
                                         @endif
