@@ -15,7 +15,7 @@ return [
     */
 
     'mailgun' => [
-        'domain' => 'mg.sigma.ca',
+        'domain' => 'mail.sigma.ca',
         'secret' => 'key-985cb0a8c0cbe895e1c6b82aacb49942',
     ],
 
