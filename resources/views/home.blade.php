@@ -63,7 +63,7 @@
             <div class="deviceWindowAll">
                 @foreach($devices as $device)
                     <div class="device col-lg-6 col-md-6 col-sm-12 col-xs-12 @foreach($device->Tags as $tag) {{ ' device-'.$tag->name.' ' }} @endforeach">
-                        <div class="deviceWindow-item space center">
+                        <div class="{{ $device->approved == true ? 'deviceWindow-item space center' : 'deviceWindow-item-private space center'}}">
                             <a class="deviceWindow-link" data-toggle="modal" href="{{ '#deviceWindowModal'.$device->id }}">
                                 <div class="deviceWindow-hover">
                                     <div class="deviceWindow-hover-content">
@@ -88,7 +88,7 @@
                 <div class="deviceWindowYours" style="display:none;">
                     @foreach($currentUser->Devices()->with('Tags')->get() as $device)
                         <div class="device col-lg-6 col-md-6 col-sm-12 col-xs-12 @foreach($device->Tags as $tag) {{ ' device-'.$tag->name.' ' }} @endforeach">
-                            <div class="deviceWindow-item space center">
+                            <div class="{{ $device->approved == true ? 'deviceWindow-item space center' : 'deviceWindow-item-private space center'}}">
                                 <a class="deviceWindow-link" data-toggle="modal" href="{{ '#deviceWindowModal'.$device->id }}">
                                     <div class="deviceWindow-hover">
                                         <div class="deviceWindow-hover-content">
@@ -387,7 +387,11 @@
                                                 <input type="hidden" name="_device_id" value="{{ $device->id }}">
                                                 <div class="btn-group" role="group">
                                                     <button class="btn btn-primary btn-md" data-dismiss="modal" data-toggle="modal" href="{{ '#deviceEditModal'.$device->id }}">Edit</button>
-                                                    <button class="btn btn-success btn-md" type="submit">Approve</button>
+                                                    @if($device->approved != true)
+                                                        <button class="btn btn-success btn-md" type="submit">Approve</button>
+                                                    @else
+                                                        <button class="btn btn-danger btn-md" type="submit">Disapprove</button>
+                                                    @endif
                                                 </div>
                                             </form>
                                         @endif

@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8017affd-10d5-47e0-abb1-cbf96e606efb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
     </list>
     <ignored path="hardware_directory.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,14 +26,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+            <state relative-caret-position="227">
+              <caret line="389" column="82" selection-start-line="389" selection-start-column="82" selection-end-line="389" selection-end-column="82" />
               <folding>
-                <marker date="1512844998461" expanded="true" signature="36471:37887" ph="..." />
+                <marker date="1513096654336" expanded="true" signature="36959:38375" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="110" column="34" selection-start-line="110" selection-start-column="34" selection-end-line="110" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="152" column="13" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
+            <state relative-caret-position="213">
+              <caret line="334" column="38" selection-start-line="334" selection-start-column="38" selection-end-line="334" selection-end-column="38" />
               <folding>
                 <element signature="e#132#160#0#PHP" expanded="true" />
               </folding>
@@ -132,7 +145,6 @@
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/vendor/laravelcollective/remote/config/remote.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/Tag.php" />
         <option value="$PROJECT_DIR$/app/Link.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
@@ -143,11 +155,12 @@
         <option value="$PROJECT_DIR$/app/Device.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GuestController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DeviceController.php" />
       </list>
     </option>
   </component>
@@ -159,10 +172,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1920" />
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="x" value="-1604" />
+    <option name="y" value="90" />
+    <option name="width" value="1366" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -189,6 +202,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -218,7 +232,25 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hardware_directory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hardware_directory" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -233,38 +265,11 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hardware_directory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hardware_directory" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,7 +279,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="SearchEverywhereHistoryKey" value="app.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/layouts/app.blade.php&#10;web.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/routes/web.php&#10;home.blade.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/home.blade.php&#10;services.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/services.php&#10;mail.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/mail.php&#10;mail.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/auth/passwords/email.blade.php&#10;composer.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/composer.json&#10;header&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/header.blade.php&#10;app&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/layouts/app.blade.php&#10;device&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/app/Device.php&#10;remote.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/vendor/laravelcollective/remote/config/remote.php&#10;guest&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/app/Http/Controllers/GuestController.php&#10;style&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/public/css/style.css&#10;welcome&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/welcome.blade.php&#10;home&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/app/Http/Controllers/HomeController.php&#10;homne&#9;null&#9;null&#10;homecontroller&#9;null&#9;null&#10;app.blade&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/layouts/app.blade.php&#10;home.blade.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/home.blade.php&#10;app.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/app.php&#10;database.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/database.php" />
+    <property name="SearchEverywhereHistoryKey" value="devicecontroller&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/app/Http/Controllers/DeviceController.php&#10;app.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/layouts/app.blade.php&#10;web.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/routes/web.php&#10;home.blade.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/home.blade.php&#10;services.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/services.php&#10;mail.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/mail.php&#10;mail.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/auth/passwords/email.blade.php&#10;composer.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/composer.json&#10;header&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/header.blade.php&#10;app&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/layouts/app.blade.php&#10;device&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/app/Device.php&#10;remote.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/vendor/laravelcollective/remote/config/remote.php&#10;guest&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/app/Http/Controllers/GuestController.php&#10;style&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/public/css/style.css&#10;welcome&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/welcome.blade.php&#10;home&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/app/Http/Controllers/HomeController.php&#10;homne&#9;null&#9;null&#10;homecontroller&#9;null&#9;null&#10;app.blade&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/layouts/app.blade.php&#10;home.blade.&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/resources/views/home.blade.php&#10;app.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/app.php&#10;database.php&#9;FILE&#9;file:///Users/marcusedwards/Documents/CCE/4th year/hardware_directory/config/database.php" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
@@ -368,33 +373,35 @@
       <workItem from="1512843927107" duration="626000" />
       <workItem from="1512844971272" duration="81000" />
       <workItem from="1512847192556" duration="1000" />
+      <workItem from="1512847886020" duration="102000" />
+      <workItem from="1513090400087" duration="775000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70101000" />
+    <option name="totallyTimeSpent" value="70978000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1604" y="90" width="1366" height="745" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23036253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5030303" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18070444" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5030303" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18134715" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22470714" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -444,7 +451,7 @@
         <state relative-caret-position="165">
           <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
           <folding>
-            <marker date="1512844998461" expanded="true" signature="36471:37887" ph="..." />
+            <marker date="1513096654336" expanded="true" signature="36959:38375" ph="..." />
           </folding>
         </state>
       </provider>
@@ -656,13 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/resources/views/html/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -776,22 +776,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="152" column="13" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
-          <folding>
-            <element signature="e#132#160#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="422">
+          <caret line="110" column="34" selection-start-line="110" selection-start-column="34" selection-end-line="110" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+        <state relative-caret-position="227">
+          <caret line="389" column="82" selection-start-line="389" selection-start-column="82" selection-end-line="389" selection-end-column="82" />
           <folding>
-            <marker date="1512844998461" expanded="true" signature="36471:37887" ph="..." />
+            <marker date="1513096654336" expanded="true" signature="36959:38375" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeviceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="334" column="38" selection-start-line="334" selection-start-column="38" selection-end-line="334" selection-end-column="38" />
+          <folding>
+            <element signature="e#132#160#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

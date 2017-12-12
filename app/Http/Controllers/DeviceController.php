@@ -338,7 +338,12 @@ class DeviceController
         }
 
         $device = Device::where('id','=',$request->input('_device_id'))->first();
-        $device->approved = true;
+        if($device->approved != true){
+            $device->approved = true;
+        }
+        else{
+            $device->approved = false;
+        }
 
         $device->save();
 
