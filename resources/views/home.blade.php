@@ -282,7 +282,9 @@
                                     <input id="device-category" name="device-category" type="text" class="form-control " value="{{ old('device-category') ? old('device-category') : '' }}" placeholder="Device category e.g. sensor">
                                     <input id="device-datasheet" name="device-datasheet" type="text" class="form-control " value="{{ old('device-datasheet') ? old('device-datasheet') : '' }}" placeholder="Datasheet link">
                                     <textarea id="device-description" name="device-description" type="text" class="form-control" value="{{ old('device-description') ? old('device-description') : '' }}" placeholder="{{ is_null(old('device-description')) ? 'Device description'  : ''}}"></textarea>
-                                    <pre name="device-code" id="device-code" class="code-editable text-left" contenteditable="true">{{ "Enter example code here!" }}</pre>
+                                    <pre name="device-code" id="device-code" class="code-editable text-left" contenteditable="true">
+{{ "Enter example code here!" }}
+                                    </pre>
                                     <div class="panel tag-panel space">
                                         <div class="panel-body">
                                             <select data-role="tagsinput" value="" type="text" id="tags" name="tags[]" placeholder="Add tags" multiple></select>
@@ -345,7 +347,13 @@
                                         <input id="{{ 'device-datasheet-'.$device->id }}" name="{{ 'device-datasheet-'.$device->id }}" type="text" class="form-control " value="{{ old('device-datasheet-'.$device->id) ? old('device-datasheet-'.$device->id) : $device->datasheet }}" placeholder="Datasheet link">
                                         <textarea id="{{ 'device-description-'.$device->id }}" name="{{ 'device-description-'.$device->id }}" type="text" class="form-control" placeholder="{{ is_null(old('device-description-'.$device->id)) ? 'Device description'  : ''}}">{{ old('device-description-'.$device->id) ? old('device-description-'.$device->id) : $device->description }}</textarea>
                                         <pre id="{{ 'device-code-'.$device->id }}" name="{{ 'device-code-'.$device->id }}" class="code-editable text-left" contenteditable="true">
-                                            {{ !is_null($device->code) ? $device->code : "Enter example code here!" }}
+@if(!is_null($device->code))
+    @foreach(explode("\n", $device->code) as $line)
+        <span>{{ trim($line) }}</span>
+    @endforeach
+@else
+    {{ "Enter example code here!" }}
+@endif
                                         </pre>
                                         <div class="panel tag-panel space">
                                             <div class="panel-body">
@@ -445,7 +453,7 @@
                                         @if(!is_null($device->code))
                                         <pre class="code-editable code-editable-display text-left">
                                             @foreach(explode("\n", $device->code) as $line)
-                                                <span>{{ $line }}</span>
+                                                <span>{{ trim($line) }}</span>
                                             @endforeach
                                         </pre>
                                         @endif
@@ -455,7 +463,7 @@
                                         @if(!is_null($device->code))
                                         <pre class="code-editable code-editable-display text-left">
                                             @foreach(explode("\n", $device->code) as $line)
-                                                <span>{{ $line }}</span>
+                                                <span>{{ trim($line) }}</span>
                                             @endforeach
                                         </pre>
                                         @endif
@@ -465,7 +473,7 @@
                                         @if(!is_null($device->code))
                                         <pre class="code-editable code-editable-display text-left">
                                             @foreach(explode("\n", $device->code) as $line)
-                                                <span>{{ $line }}</span>
+                                                <span>{{ trim($line) }}</span>
                                             @endforeach
                                         </pre>
                                         @endif
