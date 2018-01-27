@@ -509,7 +509,7 @@
 @endsection
 @section('footer')
     <script>
-        $(window).load(function(){
+        $(document).ready(function(){
             console.log('bind');
             $(document).on('keyup', '#device-code', function(event) {
                 $('#device-code-field').html(this.innerText);
