@@ -11,7 +11,7 @@
 }
 .code-editable span {
     display: block;
-    line-height: 1.5rem;
+    line-height: 0rem;
     counter-increment: line;
 }
 .code-editable-display span:before {
