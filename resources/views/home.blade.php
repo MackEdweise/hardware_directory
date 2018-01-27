@@ -524,6 +524,8 @@
                     $("{{ 'device-code-'.$device->id.'-field' }}").html(this.innerText);
                 });
             @endforeach
+        });
+        $(document).ready(function() {
             hljs.highlightBlock($('.code-editable-display'),'  ', false);
         });
     </script>
