@@ -208,7 +208,7 @@ class DeviceController
             $device->connectivity = $request->input('device-connectivity-'.$device->id);
         }
         if(!is_null($request->input('device-code-'.$device->id))){
-            $device->connectivity = $request->input('device-code-'.$device->id);
+            $device->code = $request->input('device-code-'.$device->id);
         }
         if(!is_null($request->input('device-low-'.$device->id))){
             $device->low_voltage = $request->input('device-low-'.$device->id);
