@@ -282,9 +282,7 @@
                                     <input id="device-category" name="device-category" type="text" class="form-control " value="{{ old('device-category') ? old('device-category') : '' }}" placeholder="Device category e.g. sensor">
                                     <input id="device-datasheet" name="device-datasheet" type="text" class="form-control " value="{{ old('device-datasheet') ? old('device-datasheet') : '' }}" placeholder="Datasheet link">
                                     <textarea id="device-description" name="device-description" type="text" class="form-control" value="{{ old('device-description') ? old('device-description') : '' }}" placeholder="{{ is_null(old('device-description')) ? 'Device description'  : ''}}"></textarea>
-                                    <pre name="device-code" id="device-code" class="code-editable" contenteditable="true">
-                                            {{ "Enter example code here!" }}
-                                    </pre>
+                                    <pre name="device-code" id="device-code" class="code-editable" contenteditable="true">{{ "Enter example code here!" }}</pre>
                                     <div class="panel tag-panel space">
                                         <div class="panel-body">
                                             <select data-role="tagsinput" value="" type="text" id="tags" name="tags[]" placeholder="Add tags" multiple></select>
