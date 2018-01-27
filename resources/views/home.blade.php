@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="hidden-sm hidden-xs top-img">
-    <img class="top-img" src="{{ URL::asset('img/search-research-header.png') }}" >
+    <img class="top-img" src="{{ URL::asset('img/search-research-header.png') }}">
 </div>
 <div class="hidden-md hidden-lg top-img">
-    <img class="top-img" src="{{ URL::asset('img/search-research-header-mobile.png') }}" >
+    <img class="top-img" src="{{ URL::asset('img/search-research-header-mobile.png') }}">
 </div>
 <div class="container space">
     @if (count($errors) > 0)
@@ -285,6 +285,7 @@
                                     <pre name="device-code" id="device-code" class="code-editable text-left" contenteditable="true">
 {{ "Enter example code here!" }}
                                     </pre>
+                                    <input name="device-code-field" id="device-code-field" type="hidden">
                                     <div class="panel tag-panel space">
                                         <div class="panel-body">
                                             <select data-role="tagsinput" value="" type="text" id="tags" name="tags[]" placeholder="Add tags" multiple></select>
@@ -355,6 +356,7 @@
     {{ "Enter example code here!" }}
 @endif
                                         </pre>
+                                        <input name="{{ 'device-code-'.$device->id.'-field' }}" id="{{ 'device-code-'.$device->id.'-field' }}" type="hidden">
                                         <div class="panel tag-panel space">
                                             <div class="panel-body">
                                                 <select data-role="tagsinput" value="" type="text" id="{{ 'tags-'.$device->id }}" name="{{ 'tags-'.$device->id.'[]' }}" placeholder="Add tags" multiple></select>
@@ -513,7 +515,17 @@
     <script src="{{ URL::asset('js/select2.full.min.js') }}"></script>
     <script src="{{ URL::asset('js/highlight.pack.js') }}"></script>
     <script>
-        hljs.highlightBlock($('.code-editable-display')[0],'  ', false);
+        $(document).ready(function(){
+            hljs.highlightBlock($('.code-editable-display')[0],'  ', false);
+            $(document).on('keyup', '#device-code', function(event) {
+                $('#device-code-field').html(this.innerText);
+            });
+            @foreach($devices as $device)
+                $(document).on('keyup', "{{ 'device-code-'.$device->id }}", function(event) {
+                    $("{{ 'device-code-'.$device->id.'-field' }}").html(this.innerText);
+                });
+            @endforeach
+        });
     </script>
     <script>
         $(document).ready(function() {

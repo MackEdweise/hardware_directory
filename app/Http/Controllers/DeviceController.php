@@ -68,8 +68,8 @@ class DeviceController
         if(!is_null($request->input('device-connectivity'))){
             $device->connectivity = $request->input('device-connectivity');
         }
-        if(!is_null($request->input('device-code'))){
-            $device->code = $request->input('device-code');
+        if(!is_null($request->input('device-code-field'))){
+            $device->code = $request->input('device-code-field');
         }
         if(!is_null($request->input('device-low'))){
             $device->low_voltage = $request->input('device-low');
@@ -207,8 +207,8 @@ class DeviceController
         if(!is_null($request->input('device-connectivity-'.$device->id))){
             $device->connectivity = $request->input('device-connectivity-'.$device->id);
         }
-        if(!is_null($request->input('device-code-'.$device->id))){
-            $device->code = $request->input('device-code-'.$device->id);
+        if(!is_null($request->input('device-code-'.$device->id.'-field'))){
+            $device->code = $request->input('device-code-'.$device->id.'-field');
         }
         if(!is_null($request->input('device-low-'.$device->id))){
             $device->low_voltage = $request->input('device-low-'.$device->id);
