@@ -525,6 +525,8 @@
                 });
             @endforeach
         });
+    </script>
+    <script>
         $(document).ready(function() {
             hljs.highlightBlock($('.code-editable-display'),'  ', false);
         });
