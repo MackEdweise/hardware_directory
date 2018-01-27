@@ -516,6 +516,7 @@
     <script src="{{ URL::asset('js/highlight.pack.js') }}"></script>
     <script>
         $(window).load(function(){
+            console.log('bind');
             $(document).on('keyup', '#device-code', function(event) {
                 $('#device-code-field').html(this.innerText);
             });
