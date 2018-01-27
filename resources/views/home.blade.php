@@ -516,15 +516,15 @@
     <script src="{{ URL::asset('js/highlight.pack.js') }}"></script>
     <script>
         $(document).ready(function(){
-            hljs.highlightBlock($('.code-editable-display'),'  ', false);
             $(document).on('keyup', '#device-code', function(event) {
                 $('#device-code-field').html(this.innerText);
             });
             @foreach($devices as $device)
-                $(document).on('keyup', "{{ 'device-code-'.$device->id }}", function(event) {
+                $(document).on('keyup', "{{ '#device-code-'.$device->id }}", function(event) {
                     $("{{ 'device-code-'.$device->id.'-field' }}").html(this.innerText);
                 });
             @endforeach
+            hljs.highlightBlock($('.code-editable-display'),'  ', false);
         });
     </script>
     <script>
