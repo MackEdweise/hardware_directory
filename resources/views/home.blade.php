@@ -463,7 +463,7 @@
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-sm hidden-md hidden-lg">
                                         <p class="space-left">{{ $device->description }}</p>
                                         @if(!is_null($device->code))
-                                        <pre class="code-editable code-editable-display text-left">
+                                        <pre class="space-left code-editable code-editable-display text-left">
                                             @foreach(explode("\n", $device->code) as $line)
                                                 <span>{{ trim($line) }}</span>
                                             @endforeach
@@ -473,7 +473,7 @@
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-md hidden-lg hidden-xs">
                                         <p class="space-left-large">{{ $device->description }}</p>
                                         @if(!is_null($device->code))
-                                        <pre class="code-editable code-editable-display text-left">
+                                        <pre class="space-left-large code-editable code-editable-display text-left">
                                             @foreach(explode("\n", $device->code) as $line)
                                                 <span>{{ trim($line) }}</span>
                                             @endforeach
@@ -526,12 +526,6 @@
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
     <script src="{{ URL::asset('js/select2.full.min.js') }}"></script>
-    <script src="{{ URL::asset('js/highlight.pack.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            hljs.highlightBlock($('.code-editable-display'),'  ', false);
-        });
-    </script>
     <script>
         $(document).ready(function() {
 
