@@ -508,12 +508,6 @@
 @endforeach
 @endsection
 @section('footer')
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/data.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
-    <script src="{{ URL::asset('js/select2.full.min.js') }}"></script>
-    <script src="{{ URL::asset('js/highlight.pack.js') }}"></script>
     <script>
         $(window).load(function(){
             console.log('bind');
@@ -522,11 +516,17 @@
             });
             @foreach($devices as $device)
                 $(document).on('keyup', "{{ '#device-code-'.$device->id }}", function(event) {
-                    $("{{ 'device-code-'.$device->id.'-field' }}").html(this.innerText);
-                });
+                $("{{ 'device-code-'.$device->id.'-field' }}").html(this.innerText);
+            });
             @endforeach
         });
     </script>
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/data.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+    <script src="{{ URL::asset('js/select2.full.min.js') }}"></script>
+    <script src="{{ URL::asset('js/highlight.pack.js') }}"></script>
     <script>
         $(document).ready(function() {
             hljs.highlightBlock($('.code-editable-display'),'  ', false);
