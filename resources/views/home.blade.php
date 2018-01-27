@@ -512,11 +512,11 @@
         $(document).ready(function(){
             console.log('bind');
             $(document).on('keyup', '#device-code', function(event) {
-                $('#device-code-field').html(this.innerText);
+                $('#device-code-field').val(this.innerText);
             });
             @foreach($devices as $device)
                 $(document).on('keyup', "{{ '#device-code-'.$device->id }}", function(event) {
-                $("{{ '#device-code-'.$device->id.'-field' }}").html(this.innerText);
+                $("{{ '#device-code-'.$device->id.'-field' }}").val(this.innerText);
             });
             @endforeach
         });
