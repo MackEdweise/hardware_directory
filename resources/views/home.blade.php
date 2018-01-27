@@ -515,7 +515,7 @@
     <script src="{{ URL::asset('js/select2.full.min.js') }}"></script>
     <script src="{{ URL::asset('js/highlight.pack.js') }}"></script>
     <script>
-        $(document).ready(function(){
+        $(window).load(function(){
             $(document).on('keyup', '#device-code', function(event) {
                 $('#device-code-field').html(this.innerText);
             });
