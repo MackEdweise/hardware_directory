@@ -516,7 +516,7 @@
             });
             @foreach($devices as $device)
                 $(document).on('keyup', "{{ '#device-code-'.$device->id }}", function(event) {
-                $("{{ 'device-code-'.$device->id.'-field' }}").html(this.innerText);
+                $("{{ '#device-code-'.$device->id.'-field' }}").html(this.innerText);
             });
             @endforeach
         });
