@@ -516,7 +516,7 @@
     <script src="{{ URL::asset('js/highlight.pack.js') }}"></script>
     <script>
         $(document).ready(function(){
-            hljs.highlightBlock($('.code-editable-display')[0],'  ', false);
+            hljs.highlightBlock($('.code-editable-display'),'  ', false);
             $(document).on('keyup', '#device-code', function(event) {
                 $('#device-code-field').html(this.innerText);
             });
