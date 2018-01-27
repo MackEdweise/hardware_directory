@@ -282,6 +282,9 @@
                                     <input id="device-category" name="device-category" type="text" class="form-control " value="{{ old('device-category') ? old('device-category') : '' }}" placeholder="Device category e.g. sensor">
                                     <input id="device-datasheet" name="device-datasheet" type="text" class="form-control " value="{{ old('device-datasheet') ? old('device-datasheet') : '' }}" placeholder="Datasheet link">
                                     <textarea id="device-description" name="device-description" type="text" class="form-control" value="{{ old('device-description') ? old('device-description') : '' }}" placeholder="{{ is_null(old('device-description')) ? 'Device description'  : ''}}"></textarea>
+                                    <pre name="device-code" id="device-code" class="code-editable" contenteditable="true">
+                                            {{ "Enter example code here!" }}
+                                    </pre>
                                     <div class="panel tag-panel space">
                                         <div class="panel-body">
                                             <select data-role="tagsinput" value="" type="text" id="tags" name="tags[]" placeholder="Add tags" multiple></select>
@@ -343,6 +346,9 @@
                                         <input id="{{ 'device-category-'.$device->id }}" name="{{ 'device-category-'.$device->id }}" type="text" class="form-control " value="{{ old('device-category-'.$device->id) ? old('device-category-'.$device->id) : $device->category }}" placeholder="Device category e.g. sensor">
                                         <input id="{{ 'device-datasheet-'.$device->id }}" name="{{ 'device-datasheet-'.$device->id }}" type="text" class="form-control " value="{{ old('device-datasheet-'.$device->id) ? old('device-datasheet-'.$device->id) : $device->datasheet }}" placeholder="Datasheet link">
                                         <textarea id="{{ 'device-description-'.$device->id }}" name="{{ 'device-description-'.$device->id }}" type="text" class="form-control" placeholder="{{ is_null(old('device-description-'.$device->id)) ? 'Device description'  : ''}}">{{ old('device-description-'.$device->id) ? old('device-description-'.$device->id) : $device->description }}</textarea>
+                                        <pre id="{{ 'device-code-'.$device->id }}" name="{{ 'device-code-'.$device->id }}" class="code-editable" contenteditable="true">
+                                            {{ !is_null($device->code) ? $device->code : "Enter example code here!" }}
+                                        </pre>
                                         <div class="panel tag-panel space">
                                             <div class="panel-body">
                                                 <select data-role="tagsinput" value="" type="text" id="{{ 'tags-'.$device->id }}" name="{{ 'tags-'.$device->id.'[]' }}" placeholder="Add tags" multiple></select>
@@ -438,12 +444,33 @@
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-sm hidden-xs">
                                         <p>{{ $device->description }}</p>
+                                        @if(!is_null($device->code))
+                                        <pre class="code-editable">
+                                            @foreach(explode("\n", $device->code) as $line)
+                                                <span>{{ $line }}</span>
+                                            @endforeach
+                                        </pre>
+                                        @endif
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-sm hidden-md hidden-lg">
                                         <p class="space-left">{{ $device->description }}</p>
+                                        @if(!is_null($device->code))
+                                        <pre class="code-editable">
+                                            @foreach(explode("\n", $device->code) as $line)
+                                                <span>{{ $line }}</span>
+                                            @endforeach
+                                        </pre>
+                                        @endif
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-md hidden-lg hidden-xs">
                                         <p class="space-left-large">{{ $device->description }}</p>
+                                        @if(!is_null($device->code))
+                                        <pre class="code-editable">
+                                            @foreach(explode("\n", $device->code) as $line)
+                                                <span>{{ $line }}</span>
+                                            @endforeach
+                                        </pre>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="row">
