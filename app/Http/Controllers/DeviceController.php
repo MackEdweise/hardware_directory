@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use SSH;
 use Storage;
+use File;
+use Response;
 
 class DeviceController
 {
@@ -375,5 +377,88 @@ class DeviceController
             'tags' => $uniqueTags
         ]);
 
+    }
+    public function downloadSampleCSV(){
+
+        $headers = array(
+            'Content-Type' => 'text/csv',
+        );
+
+        $filename = "sample_data.csv";
+
+        return Response::download($filename, $filename, $headers);
+    }
+    public function uploadCSV(Request $request){
+
+        $rules = array(
+            'data-file' => 'required'
+        );
+
+        $messages = [
+            'data-file.required' => 'Please select a file to upload.'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return Redirect::route('home')->withErrors($validator);
+        }
+
+        $file = fopen($request->file('data-file')->getRealPath(), "r");
+
+        if($file) {
+
+            $countDevices = 0;
+
+            $row = 0;
+            while ( ($data = fgetcsv($file)) !== false) {
+
+                if($row != 0) {
+
+                    // get device info
+                    if(!empty($data[0]) && !is_null($data[0])){
+
+                        $name = $data[0];
+                        $platforms = !empty($data[1]) ? $data[1] : null;
+                        $category = !empty($data[2]) ? $data[2] : null;
+                        $datasheet = !empty($data[3]) ? $data[3] : null;
+                        $description = !empty($data[4]) ? $data[4] : null;
+                        $connectivity = !empty($data[5]) ? $data[5] : null;
+                        $lowVoltage = !empty($data[6]) ? $data[6] : null;
+                        $highVoltage = !empty($data[7]) ? $data[7] : null;
+                        $speed = !empty($data[8]) ? $data[8] : null;
+                        $manufacturers = !empty($data[9]) ? $data[9] : null;
+
+                        $device = new Device();
+
+                        $device->name = $name;
+                        $device->description = $description;
+                        $device->connectivity = $connectivity;
+                        $device->platform = $platforms;
+                        $device->category = $category;
+                        $device->datasheet = $datasheet;
+                        $device->low_voltage = $lowVoltage;
+                        $device->high_voltage = $highVoltage;
+                        $device->speed = $speed;
+                        $device->manufacturers = $manufacturers;
+
+                        $device->save();
+
+                        $countDevices += 1;
+                    }
+                }
+
+                $row += 1;
+            }
+
+            fclose($file);
+            File::delete($file);
+
+            return Redirect::route('home')->with('alert-success', 'Successfully created '.$countDevices.' devices!');
+
+        }
+        else{
+            return Redirect::route('home')->with('alert-danger', 'No data file was found.');
+        }
     }
 }

@@ -296,6 +296,9 @@
                                             <select data-role="tagsinput" value="" type="text" id="links" name="links[]" placeholder="Add links" multiple></select>
                                         </div>
                                     </div>
+                                    <a data-target="#spreadsheetModal" data-toggle="modal">
+                                        <button type="button" class="btn btn-success space">Bulk Upload</button>
+                                    </a>
                                     <button type="submit" class="btn btn-success add-submit space">Save</button>
                                 </div>
                             </div>
@@ -500,6 +503,38 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="spreadsheetModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Spreadsheet</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p style="display:inline">upload .csv</p><a style="display:inline; margin-left: 15px;" class="my-tool-tip" data-toggle="tooltip" data-placement="top" title="" data-original-title="First download the template. Then populate the tables and upload to hardware.dir."><i class="glyphicon glyphicon-info-sign"></i></a>
+                            <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('data_upload') }}">
+                                {{ csrf_field() }}
+                                <div class="col-md-12">
+                                    <input style="margin-top: 10px;" type="file" name="data-file" id="data-file" size="20" />
+                                </div>
+                                <div>
+                                    <a style="margin-top: 10px; margin-bottom: 10px;" class="btn btn-primary" href="{{ route('data_sample_download') }}">Download Sample</a>
+                                    <button type="submit" style="margin-top: 10px; margin-bottom: 10px;" class="btn btn-primary">Upload</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

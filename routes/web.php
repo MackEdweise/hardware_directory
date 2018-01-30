@@ -36,4 +36,8 @@ Route::post('/edit', 'DeviceController@edit')->name('edit_device');
 
 Route::post('/approve', 'DeviceController@approve')->name('approve_device');
 
+Route::post('/upload', 'DeviceController@uploadCSV')->name('data_upload')->middleware('auth');
+
+Route::get('/downloadSample', 'DeviceController@downloadSampleCSV')->name('data_sample_download')->middleware('auth');
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('log_me_out');
