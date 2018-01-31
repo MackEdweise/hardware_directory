@@ -299,7 +299,7 @@
                                     <a data-target="#spreadsheetModal" data-toggle="modal">
                                         <button type="button" class="btn btn-success space">Bulk Upload</button>
                                     </a>
-                                    <button type="submit" class="btn btn-success add-submit space">Save</button>
+                                    <button type="submit" class="btn btn-success space">Save</button>
                                 </div>
                             </div>
                         </form>

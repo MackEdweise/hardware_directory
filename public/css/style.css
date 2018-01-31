@@ -64,10 +64,6 @@ select{
     height: 160px;
     overflow: hidden;
 }
-.add-submit{
-    height: 30px;
-    width:80px;
-}
 .space-left{
     margin-left: 20% !important;
 }
