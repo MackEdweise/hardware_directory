@@ -390,6 +390,8 @@ class DeviceController
     }
     public function uploadCSV(Request $request){
 
+        $currentUser = Auth::user();
+
         $rules = array(
             'data-file' => 'required'
         );
@@ -431,7 +433,7 @@ class DeviceController
 
                         $existing = Device::where('name', '=', $name)->first();
 
-                        if(!is_null($existing)){
+                        if(!is_null($existing) && (($currentUser->admin == true) || ($existing->user_id == $currentUser->id))){
                             $device = $existing;
                         }
                         else{
