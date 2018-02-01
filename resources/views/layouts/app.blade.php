@@ -31,7 +31,6 @@
     <!-- CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">

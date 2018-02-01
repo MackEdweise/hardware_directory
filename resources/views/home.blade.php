@@ -518,7 +518,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <p style="display:inline">upload .csv</p><a style="display:inline; margin-left: 15px;" class="my-tool-tip" data-toggle="tooltip" data-placement="top" title="" data-original-title="First download the template. Then populate the tables and upload to hardware.dir."><i class="glyphicon glyphicon-info-sign"></i></a>
+                            <p style="display:inline">upload .csv</p><a style="display:inline; margin-left: 15px;" class="my-tool-tip" data-toggle="tooltip" data-placement="top" title="" data-original-title="First download the template. Then populate the tables and upload to hardware.dir."><i class="fa fa-info-circle"></i></a>
                             <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('data_upload') }}">
                                 {{ csrf_field() }}
                                 <div class="col-md-12">
@@ -545,7 +545,6 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            console.log('bind');
             $(document).on('keyup', '#device-code', function(event) {
                 $('#device-code-field').val(this.innerText);
             });
