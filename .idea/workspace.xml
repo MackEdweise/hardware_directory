@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8017affd-10d5-47e0-abb1-cbf96e606efb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hardware_directory.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +36,8 @@
       <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="437" column="50" selection-start-line="437" selection-start-column="50" selection-end-line="437" selection-end-column="50" />
+            <state relative-caret-position="20">
+              <caret line="431" column="81" selection-start-line="431" selection-start-column="81" selection-end-line="431" selection-end-column="81" />
               <folding>
                 <marker date="1517505630664" expanded="true" signature="43258:43546" ph="..." />
                 <marker date="1517505630664" expanded="true" signature="43278:43545" ph="..." />
@@ -352,12 +352,12 @@
       <workItem from="1517352295808" duration="2068000" />
       <workItem from="1517363949989" duration="1056000" />
       <workItem from="1517422726946" duration="85000" />
-      <workItem from="1517503401223" duration="2035000" />
+      <workItem from="1517503401223" duration="2181000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87197000" />
+    <option name="totallyTimeSpent" value="87343000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1477" y="275" width="1360" height="745" extended-state="0" />
@@ -768,8 +768,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="437" column="50" selection-start-line="437" selection-start-column="50" selection-end-line="437" selection-end-column="50" />
+        <state relative-caret-position="20">
+          <caret line="431" column="81" selection-start-line="431" selection-start-column="81" selection-end-line="431" selection-end-column="81" />
           <folding>
             <marker date="1517505630664" expanded="true" signature="43258:43546" ph="..." />
             <marker date="1517505630664" expanded="true" signature="43278:43545" ph="..." />
