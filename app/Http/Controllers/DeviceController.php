@@ -429,7 +429,14 @@ class DeviceController
                         $speed = !empty($data[8]) ? $data[8] : null;
                         $manufacturers = !empty($data[9]) ? $data[9] : null;
 
-                        $device = new Device();
+                        $existing = Device::where('name', '=', $name)->first();
+
+                        if(!is_null($existing)){
+                            $device = $existing;
+                        }
+                        else{
+                            $device = new Device();
+                        }
 
                         $device->name = $name;
                         $device->description = $description;
