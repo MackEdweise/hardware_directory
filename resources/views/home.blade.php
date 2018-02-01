@@ -398,6 +398,7 @@
                                         <img class="img-fluid d-block mx-auto device-image" src="{{ $device->image ? 'http://www.datablue.stream/HardwareDirectory/'.$device->image : 'img/hddirlogo.png' }}" alt="">
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-center hidden-lg hidden-md">
+                                        <div class="row">
                                         @if(!is_null($currentUser) && ($currentUser->admin == true))
                                             <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('approve_device') }}">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -412,10 +413,33 @@
                                                 </div>
                                             </form>
                                         @endif
-                                        <h2>{{ $device->name }}</h2>
-                                        <p class="item-intro text-muted">{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</p>
+                                        </div>
+                                        <div class="row">
+                                            <h2>{{ $device->name }}</h2>
+                                        </div>
+                                        <div class="row">
+                                            <p class="item-intro text-muted">{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12 col-md-12 col-sm-12">
+                                                @foreach($device->tags as $tag)
+                                                    <span class="label label-default">{{ $tag->name }}</span>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12 col-md-12 col-sm-12">
+                                                @foreach($device->links as $link)
+                                                    <a href="{{ $link->address }}"><span class="label label-info">{{ explode('/',explode('://',$link->address)[1])[0] }}</span></a>
+                                                @endforeach
+                                                @if(!is_null($device->datasheet))
+                                                    <a href="{{ $device->datasheet }}"><span class="label label-info">Datasheet</span></a>
+                                                @endif
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-md-7 col-sm-12 col-xs-12 col-lg-7 text-left hidden-xs hidden-sm">
+                                        <div class="row">
                                         @if(!is_null($currentUser) && ($currentUser->admin == true))
                                             <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ route('approve_device') }}">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -430,28 +454,33 @@
                                                 </div>
                                             </form>
                                         @endif
-                                        <h2>{{ $device->name }}</h2>
-                                        <p class="item-intro text-muted">{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</p>
+                                        </div>
+                                        <div class="row">
+                                            <h2>{{ $device->name }}</h2>
+                                        </div>
+                                        <div class="row">
+                                            <p class="item-intro text-muted">{{ $device->platform ? $device->platform.' compatible' : '' }} {{ $device->category }}</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12 col-md-12 col-sm-12">
+                                                @foreach($device->tags as $tag)
+                                                    <span class="label label-default">{{ $tag->name }}</span>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12 col-md-12 col-sm-12">
+                                                @foreach($device->links as $link)
+                                                    <a href="{{ $link->address }}"><span class="label label-info">{{ explode('/',explode('://',$link->address)[1])[0] }}</span></a>
+                                                @endforeach
+                                                @if(!is_null($device->datasheet))
+                                                    <a href="{{ $device->datasheet }}"><span class="label label-info">Datasheet</span></a>
+                                                @endif
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-xs-12 col-md-12 col-sm-12">
-                                        @foreach($device->tags as $tag)
-                                            <span class="label label-default">{{ $tag->name }}</span>
-                                        @endforeach
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-xs-12 col-md-12 col-sm-12 space">
-                                        @foreach($device->links as $link)
-                                            <a href="{{ $link->address }}"><span class="label label-info">{{ explode('/',explode('://',$link->address)[1])[0] }}</span></a>
-                                        @endforeach
-                                        @if(!is_null($device->datasheet))
-                                            <a href="{{ $device->datasheet }}"><span class="label label-info">Datasheet</span></a>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="row">
+                                <div class="row space">
                                     <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 hidden-sm hidden-lg">
                                         <ul class="fa-ul text-left space-left">
                                             <li> <i class="fa-li fa fa-feed"></i>Connectivity: {{ ($device->connectivity != null && $device->connectivity != '') ? $device->connectivity : 'N/A'}}</li>
